@@ -8,9 +8,34 @@
   <meta name="description" content="Personal Homepage for Travis. Currently under construction">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <script type='importmap' >
+    {
+      "imports": {
+        "grommet": "https://cdn.skypack.dev/pin/grommet@v2.18.0-63vw44EcU3IyrkiekMKh/mode=imports,min/optimized/grommet.js",
+        "styled-components": "https://cdn.skypack.dev/pin/styled-components@v5.3.3-urBHNpVrUexag9o0XGMt/mode=imports,min/optimized/styled-components.js",
+        "react": "https://cdn.skypack.dev/pin/react@v17.0.1-yH0aYV1FOvoIPeKBbHxg/mode=imports,min/optimized/react.js",
+        "react-dom": "https://cdn.skypack.dev/pin/react-dom@v17.0.1-oZ1BXZ5opQ1DbTh7nu9r/mode=imports,min/optimized/react-dom.js",
+        "_htm": "https://cdn.skypack.dev/pin/htm@v3.1.0-Lnrl6ooU0xR8YCDnwwW6/mode=imports,min/optimized/htm.js",
+
+        "htm": "/util/react-htm.js",
+        "component/": "/component/"
+      }
+    }
+  </script>
+  <script type='module'>
+    import { html } from 'htm'
+    import { render } from 'react-dom'
+
+    const App = props => html`
+      <p> Under Construction <//>
+    `
+
+    render(html`<${App} />`, document.body)
+  </script>
 </head>
 
-<body>
-  <p>Under Construction</p>
-<body>
+<body></body>
+
 </html>
