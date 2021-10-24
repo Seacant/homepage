@@ -7,8 +7,10 @@
   "license": "MIT",
   "dependencies": {
     "grommet": "^2.18.0",
+    "grommet-icons": "^4.6.2",
     "htm": "^3.1.0",
     "preact": "^10.5.15",
+    "react-is": "^17.0.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

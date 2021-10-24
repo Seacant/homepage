@@ -36,9 +36,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
+            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
             ["preact", "npm:10.5.15"],
+            ["react-is", "npm:17.0.2"],
             ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
           ],
           "linkType": "SOFT",
@@ -3826,7 +3828,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/styled-components", null],
-            ["grommet-icons", "virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:4.6.2"],
+            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["markdown-to-jsx", "virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:7.1.3"],
             ["prop-types", "npm:15.7.2"],
@@ -3853,14 +3855,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:4.6.2", {
-          "packageLocation": "./.yarn/__virtual__/grommet-icons-virtual-348aef9e58/0/cache/grommet-icons-npm-4.6.2-c53fb2cf21-669cd57748.zip/node_modules/grommet-icons/",
+        ["virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2", {
+          "packageLocation": "./.yarn/__virtual__/grommet-icons-virtual-7daea384e1/0/cache/grommet-icons-npm-4.6.2-c53fb2cf21-669cd57748.zip/node_modules/grommet-icons/",
           "packageDependencies": [
-            ["grommet-icons", "virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:4.6.2"],
+            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/styled-components", null],
-            ["grommet-styles", "virtual:348aef9e58360d122f202401ccbb43ede1ef4d014b34eecf3b8ffdc92a9e032bf7a1e57505f5ed87c6ca21fdb35b4a482eb8e5c2acaf20125db8fbed60a6f513#npm:0.2.0"],
+            ["grommet-styles", "virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0"],
             ["react", null],
             ["react-dom", null],
             ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
@@ -3884,10 +3886,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:348aef9e58360d122f202401ccbb43ede1ef4d014b34eecf3b8ffdc92a9e032bf7a1e57505f5ed87c6ca21fdb35b4a482eb8e5c2acaf20125db8fbed60a6f513#npm:0.2.0", {
-          "packageLocation": "./.yarn/__virtual__/grommet-styles-virtual-e68acd48d1/0/cache/grommet-styles-npm-0.2.0-23f33b1bc9-7b29e6fd77.zip/node_modules/grommet-styles/",
+        ["virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0", {
+          "packageLocation": "./.yarn/__virtual__/grommet-styles-virtual-60ffb3cbb7/0/cache/grommet-styles-npm-0.2.0-23f33b1bc9-7b29e6fd77.zip/node_modules/grommet-styles/",
           "packageDependencies": [
-            ["grommet-styles", "virtual:348aef9e58360d122f202401ccbb43ede1ef4d014b34eecf3b8ffdc92a9e032bf7a1e57505f5ed87c6ca21fdb35b4a482eb8e5c2acaf20125db8fbed60a6f513#npm:0.2.0"],
+            ["grommet-styles", "virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0"],
             ["@types/react", null],
             ["@types/react-dom", null],
             ["@types/styled-components", null],
@@ -4066,9 +4068,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["homepage", "workspace:."],
             ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
+            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
             ["preact", "npm:10.5.15"],
+            ["react-is", "npm:17.0.2"],
             ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
           ],
           "linkType": "SOFT",
@@ -6937,6 +6941,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:16.13.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:17.0.2", {
+          "packageLocation": "./.yarn/cache/react-is-npm-17.0.2-091bbb8db6-9d6d111d89.zip/node_modules/react-is/",
+          "packageDependencies": [
+            ["react-is", "npm:17.0.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["react-refresh", [
@@ -7609,7 +7620,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", null],
             ["react-dom", null],
-            ["react-is", null],
+            ["react-is", "npm:17.0.2"],
             ["shallowequal", "npm:1.1.0"],
             ["supports-color", "npm:5.5.0"]
           ],
