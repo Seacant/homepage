@@ -1,0 +1,26 @@
+{
+  "name": "homepage",
+  "version": "0.0.1",
+  "description": "Using personal homepage to test new web technologies",
+  "repository": "git@github.com:Seacant/homepage.git",
+  "author": "Travis Fletcher <travis@tfletch.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "grommet": "^2.18.0",
+    "htm": "^3.1.0",
+    "preact": "^10.5.15",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "packageManager": "yarn@3.0.2"
+}
