@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@parcel/transformer-inline-string", "npm:2.0.0"],
             ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
             ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
@@ -1266,6 +1267,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@parcel/plugin", "npm:2.0.0"],
             ["@parcel/workers", "virtual:967f993b020fd9fc988e043c8f7acfc398405a93460c00c178656a3e8276d7ae369b4e1e114434ccd3bb9f6fa68813ec4eab6f56e247b7e9202820e52c6a425b#npm:2.0.0"],
             ["nullthrows", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@parcel/transformer-inline-string", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/@parcel-transformer-inline-string-npm-2.0.0-3e34f5452d-cb49964b60.zip/node_modules/@parcel/transformer-inline-string/",
+          "packageDependencies": [
+            ["@parcel/transformer-inline-string", "npm:2.0.0"],
+            ["@parcel/plugin", "npm:2.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -4067,6 +4078,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["homepage", "workspace:."],
+            ["@parcel/transformer-inline-string", "npm:2.0.0"],
             ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
             ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],

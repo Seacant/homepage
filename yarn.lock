@@ -994,6 +994,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/transformer-inline-string@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@parcel/transformer-inline-string@npm:2.0.0"
+  dependencies:
+    "@parcel/plugin": ^2.0.0
+  checksum: cb49964b60444533f762ea1734ddada52288ec63dcb1ba6b568fe0f0bee4cf24b566cd4a257d328255cb15abf4ceb6bf5b8a785575356753dac2accb95850237
+  languageName: node
+  linkType: hard
+
 "@parcel/transformer-js@npm:^2.0.0":
   version: 2.0.0
   resolution: "@parcel/transformer-js@npm:2.0.0"
@@ -3315,6 +3324,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "homepage@workspace:."
   dependencies:
+    "@parcel/transformer-inline-string": ^2.0.0
     grommet: ^2.18.0
     grommet-icons: ^4.6.2
     htm: ^3.1.0
