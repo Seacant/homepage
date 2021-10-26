@@ -2506,7 +2506,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"domhandler@npm:^4.2.0, domhandler@npm:^4.2.2":
+"domhandler@npm:^4.0.0, domhandler@npm:^4.2.0, domhandler@npm:^4.2.2":
   version: 4.2.2
   resolution: "domhandler@npm:4.2.2"
   dependencies:
@@ -2515,7 +2515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"domutils@npm:^2.6.0, domutils@npm:^2.8.0":
+"domutils@npm:^2.5.2, domutils@npm:^2.6.0, domutils@npm:^2.8.0":
   version: 2.8.0
   resolution: "domutils@npm:2.8.0"
   dependencies:
@@ -2909,6 +2909,13 @@ __metadata:
   dependencies:
     format: ^0.2.0
   checksum: 5ac610d8b09424e0f2fa8cf913064372f2ee7140a203a79957f73ed557c0e79b1a3d096064d7f40bde8132a69204c1fe25ec23634c05c6da2da2039cff26c4e7
+  languageName: node
+  linkType: hard
+
+"fclone@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "fclone@npm:1.0.11"
+  checksum: 016eb1eac443b0c896adf938f6b300bfc86365444f5160ccf3d68a598d1372d00ca96ab8e116185dc9f316cec83de5f2df157fe7fe365a57bcba1ccc17491f61
   languageName: node
   linkType: hard
 
@@ -3324,11 +3331,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "homepage@workspace:."
   dependencies:
+    "@parcel/core": ^2.0.0
     "@parcel/transformer-inline-string": ^2.0.0
     grommet: ^2.18.0
     grommet-icons: ^4.6.2
     htm: ^3.1.0
     parcel: ^2.0.0
+    posthtml: ^0.16.5
+    posthtml-doctype: ^1.1.1
+    posthtml-include: ^1.7.2
     preact: ^10.5.15
     react-is: ^17.0.2
     styled-components: ^5.3.3
@@ -3374,6 +3385,18 @@ __metadata:
     timsort: ^0.3.0
     uncss: ^0.17.3
   checksum: c9e25b63de2ac42f232c32e0e3bc0b3aaa1a5ee969259a0fb93e9dcd80813180a4fc940f854fc6028e4520689b955d58bde1f49cce3e285f62c17be992487558
+  languageName: node
+  linkType: hard
+
+"htmlparser2@npm:^6.0.0":
+  version: 6.1.0
+  resolution: "htmlparser2@npm:6.1.0"
+  dependencies:
+    domelementtype: ^2.0.1
+    domhandler: ^4.0.0
+    domutils: ^2.5.2
+    entities: ^2.0.0
+  checksum: 81a7b3d9c3bb9acb568a02fc9b1b81ffbfa55eae7f1c41ae0bf840006d1dbf54cb3aa245b2553e2c94db674840a9f0fdad7027c9a9d01a062065314039058c4e
   languageName: node
   linkType: hard
 
@@ -5403,6 +5426,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"posthtml-doctype@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "posthtml-doctype@npm:1.1.1"
+  checksum: 8419b1c87641ed566cb7a867d7d5a9980134f777b783f88434f2f4fe51a124872f2a658a8172a0a216f826eb68c706bf4bdd69935171d4564ef75bd58ec1edd2
+  languageName: node
+  linkType: hard
+
+"posthtml-expressions@npm:^1.7.1":
+  version: 1.9.0
+  resolution: "posthtml-expressions@npm:1.9.0"
+  dependencies:
+    fclone: ^1.0.11
+    posthtml-match-helper: ^1.0.1
+    posthtml-parser: ^0.10.0
+    posthtml-render: ^3.0.0
+  checksum: f93d66d6e2c193649c12174492f021b7b0fbc9bfb0a059b34945325f7fd20b0030acaef2c4732842c52766c1718a2fe87d038d334682f1e2b36f0c542a9eb90b
+  languageName: node
+  linkType: hard
+
+"posthtml-include@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "posthtml-include@npm:1.7.2"
+  dependencies:
+    posthtml: ^0.15.1
+    posthtml-expressions: ^1.7.1
+    posthtml-parser: ^0.7.1
+  checksum: 0f1deef036e6f9780fb3f9db55ed8d8cce503779f2de85b867b077241feb2f0673367a14ab2cfefe721d4412ed06f036e69c31003eb67e1a0ce2b1478606a374
+  languageName: node
+  linkType: hard
+
+"posthtml-match-helper@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "posthtml-match-helper@npm:1.0.1"
+  peerDependencies:
+    posthtml: ">=0.5.0"
+  checksum: 29ef969a702d88caa848c38565af7d7e1f6e421dae37fa388578d406e66c4e38d9de28cba4771afb3e18295d2ea74817d168f3e436b3a27fab832d18940a0bc2
+  languageName: node
+  linkType: hard
+
 "posthtml-parser@npm:^0.10.0, posthtml-parser@npm:^0.10.1":
   version: 0.10.1
   resolution: "posthtml-parser@npm:0.10.1"
@@ -5412,12 +5474,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"posthtml-parser@npm:^0.7.1, posthtml-parser@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "posthtml-parser@npm:0.7.2"
+  dependencies:
+    htmlparser2: ^6.0.0
+  checksum: dca97687f09e4f3a46e683bd1e5efe49ca15cbadafca4282d3e0b2228df2634a0798826842c3bceec2ee28651a797b446b4825c867c34871945972302ad6e0f8
+  languageName: node
+  linkType: hard
+
+"posthtml-render@npm:^1.3.1":
+  version: 1.4.0
+  resolution: "posthtml-render@npm:1.4.0"
+  checksum: 68c5c85834d57d54bb797ae81a4ab74ad1d87f55e6a327dac9804fbed96214b57d437d7e255e9396184ab976ab7e77aed6efda9315c156ab25ef8ab2c095c16b
+  languageName: node
+  linkType: hard
+
 "posthtml-render@npm:^3.0.0":
   version: 3.0.0
   resolution: "posthtml-render@npm:3.0.0"
   dependencies:
     is-json: ^2.0.1
   checksum: 5ed2d6e8813af63c4e5a2d9d026f611fd178c9052a16b302a6e0e81d1badb64dab36e3fc1531b5bdd376465f39d19a6488299b3c6dfe13beae3dd525ff856573
+  languageName: node
+  linkType: hard
+
+"posthtml@npm:^0.15.1":
+  version: 0.15.2
+  resolution: "posthtml@npm:0.15.2"
+  dependencies:
+    posthtml-parser: ^0.7.2
+    posthtml-render: ^1.3.1
+  checksum: 9b37fea35f8adecfd4379e568ba4038448c0a1fd9e0c8167765488e4e453891fa4481a9b8925d23b1dba5c2810c42717e19bc4870468f07983d5d99e0f105bb7
   languageName: node
   linkType: hard
 

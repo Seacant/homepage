@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en'>
+<head>
+  <include src="src/head.html" ></include>
+  <script type='module'>
+    import { App } from '../components/App'
+    import { Heading } from 'grommet'
+    import { render } from 'preact'
+    import { html } from 'htm/preact'
+
+    render(html`
+      <${App} >
+        <${Heading} level=1> Under Construction <//>
+      <//>
+    `, document.body)
+  </script>
+</head>
+</html>

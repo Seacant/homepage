@@ -13,14 +13,14 @@ const theme = {
   }
 };
 
-const App = props => html`
+const App = ({children}) => html`
   <${StyleSheetManager} disableVendorPrefixes >
     <${Grommet} plain theme=${theme} full="min">
       <${Header} background="brand" >
         <${Button} icon=${html`<${Home} />`} hoverIndicator />
       <//>
       <${Main} fill=${false} pad="large">
-        <${Heading} level=1 > Under Construction <//>
+        ${children}
       <//>
       <${Footer} justify="center">
         <${Text} > Copyright ©2021 <//>
