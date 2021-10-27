@@ -13,7 +13,7 @@ const theme = {
   }
 };
 
-const App = ({children}) => html`
+export const App = ({children}) => html`
   <${StyleSheetManager} disableVendorPrefixes >
     <${Grommet} plain theme=${theme} full="min">
       <${Header} background="brand" >
@@ -28,5 +28,3 @@ const App = ({children}) => html`
     <//>
   <//>
 `
-
-render(html`<${App} />`, document.body)

@@ -1,5 +1,6 @@
 dist/
 .parcel-cache
+.direnv/
 
 # Yarn 0-install configs
 .yarn/*
