@@ -37,7 +37,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@parcel/core", "npm:2.0.0"],
             ["@parcel/transformer-inline-string", "npm:2.0.0"],
-            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
             ["posthtml", "npm:0.16.5"],
@@ -3836,67 +3835,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["grommet-icons", [
-        ["npm:4.6.2", {
-          "packageLocation": "./.yarn/cache/grommet-icons-npm-4.6.2-c53fb2cf21-669cd57748.zip/node_modules/grommet-icons/",
-          "packageDependencies": [
-            ["grommet-icons", "npm:4.6.2"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2", {
-          "packageLocation": "./.yarn/__virtual__/grommet-icons-virtual-7daea384e1/0/cache/grommet-icons-npm-4.6.2-c53fb2cf21-669cd57748.zip/node_modules/grommet-icons/",
-          "packageDependencies": [
-            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
-            ["@types/react", null],
-            ["@types/react-dom", null],
-            ["@types/styled-components", null],
-            ["grommet-styles", "virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0"],
-            ["react", null],
-            ["react-dom", null],
-            ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
-          ],
-          "packagePeers": [
-            "@types/react-dom",
-            "@types/react",
-            "@types/styled-components",
-            "react-dom",
-            "react",
-            "styled-components"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["grommet-styles", [
-        ["npm:0.2.0", {
-          "packageLocation": "./.yarn/cache/grommet-styles-npm-0.2.0-23f33b1bc9-7b29e6fd77.zip/node_modules/grommet-styles/",
-          "packageDependencies": [
-            ["grommet-styles", "npm:0.2.0"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0", {
-          "packageLocation": "./.yarn/__virtual__/grommet-styles-virtual-60ffb3cbb7/0/cache/grommet-styles-npm-0.2.0-23f33b1bc9-7b29e6fd77.zip/node_modules/grommet-styles/",
-          "packageDependencies": [
-            ["grommet-styles", "virtual:7daea384e1bb20a282bd8befcb6d7b5dd8674a2e10b255d7b00e7a0b28f4220e3055753d556b49fb3aab0b165beaeb35ef0518186da9dc65b5f5bf9bc8a5e133#npm:0.2.0"],
-            ["@types/react", null],
-            ["@types/react-dom", null],
-            ["@types/styled-components", null],
-            ["react", null],
-            ["react-dom", null],
-            ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
-          ],
-          "packagePeers": [
-            "@types/react-dom",
-            "@types/react",
-            "@types/styled-components",
-            "react-dom",
-            "react",
-            "styled-components"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["har-schema", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/har-schema-npm-2.0.0-3a318c0ca5-d8946348f3.zip/node_modules/har-schema/",
@@ -4058,7 +3996,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["homepage", "workspace:."],
             ["@parcel/core", "npm:2.0.0"],
             ["@parcel/transformer-inline-string", "npm:2.0.0"],
-            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
             ["posthtml", "npm:0.16.5"],

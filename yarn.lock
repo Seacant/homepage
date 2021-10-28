@@ -3153,30 +3153,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-icons@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "grommet-icons@npm:4.6.2"
-  dependencies:
-    grommet-styles: ^0.2.0
-  peerDependencies:
-    react: ">= 16.6.0"
-    react-dom: ">= 16.6.0"
-    styled-components: ">= 5.x"
-  checksum: 669cd57748982e6b4e76247dd37099e1b551644998469e4b798af8254ac6089f89fd67563cd0c903f674b9f491ffd3ab8321800d2590d0562531fb960f35f05f
-  languageName: node
-  linkType: hard
-
-"grommet-styles@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "grommet-styles@npm:0.2.0"
-  peerDependencies:
-    react: ">= 16.4.1"
-    react-dom: ">= 16.4.1"
-    styled-components: ">= 4.X"
-  checksum: 7b29e6fd773a29a9f7b48e5b0a163e1c51b3b196891228d88a0e5b99faab4ece03b5410a97665105fe886402016a337237b956d5f46af06ec2e06e2b328a0757
-  languageName: node
-  linkType: hard
-
 "har-schema@npm:^2.0.0":
   version: 2.0.0
   resolution: "har-schema@npm:2.0.0"
@@ -3317,7 +3293,6 @@ __metadata:
   dependencies:
     "@parcel/core": ^2.0.0
     "@parcel/transformer-inline-string": ^2.0.0
-    grommet-icons: ^4.6.2
     htm: ^3.1.0
     parcel: ^2.0.0
     posthtml: ^0.16.5

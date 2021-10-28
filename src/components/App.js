@@ -1,5 +1,5 @@
 import { html } from 'htm/preact'
-import { Home } from 'grommet-icons'
+import { Github, Linkedin, Mail } from './Icons'
 import styled, { StyleSheetManager, css } from 'styled-components'
 
 import { Text } from './Typography'
@@ -28,11 +28,6 @@ const PageNav = styled.nav`
 
 const SocialNav = styled.nav`
   order: 2;
-`
-
-const SocialLogo = styled.img`
-  width: 16px;
-  height: 16px;
 `
 
 const Main = styled.main`
@@ -70,10 +65,13 @@ export const App = ({children}) => html`
       <//>
       <${SocialNav} >
         <${NavItem} href='https://github.com/Seacant/'>
-          <${SocialLogo} src="https://github.com/favicon.ico" alt="GitHub" />
+          <${Github} />
         <//>
         <${NavItem} href='https://www.linkedin.com/in/travis-fletcher-a13771173/'>
-          <${SocialLogo} src="https://www.linkedin.com/favicon.ico" alt="LinkedIn" />
+          <${Linkedin} />
+        <//>
+        <${NavItem} href='mailto:travis@tfletch.tech'>
+          <${Mail} />
         <//>
       <//>
     <//>
