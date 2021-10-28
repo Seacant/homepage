@@ -37,7 +37,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@parcel/core", "npm:2.0.0"],
             ["@parcel/transformer-inline-string", "npm:2.0.0"],
-            ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
             ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
@@ -3837,40 +3836,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["grommet", [
-        ["npm:2.18.0", {
-          "packageLocation": "./.yarn/cache/grommet-npm-2.18.0-d49281a867-45d7b67fc2.zip/node_modules/grommet/",
-          "packageDependencies": [
-            ["grommet", "npm:2.18.0"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0", {
-          "packageLocation": "./.yarn/__virtual__/grommet-virtual-9068057810/0/cache/grommet-npm-2.18.0-d49281a867-45d7b67fc2.zip/node_modules/grommet/",
-          "packageDependencies": [
-            ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
-            ["@types/react", null],
-            ["@types/react-dom", null],
-            ["@types/styled-components", null],
-            ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
-            ["hoist-non-react-statics", "npm:3.3.2"],
-            ["markdown-to-jsx", "virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:7.1.3"],
-            ["prop-types", "npm:15.7.2"],
-            ["react", null],
-            ["react-dom", null],
-            ["styled-components", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.3.3"]
-          ],
-          "packagePeers": [
-            "@types/react-dom",
-            "@types/react",
-            "@types/styled-components",
-            "react-dom",
-            "react",
-            "styled-components"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["grommet-icons", [
         ["npm:4.6.2", {
           "packageLocation": "./.yarn/cache/grommet-icons-npm-4.6.2-c53fb2cf21-669cd57748.zip/node_modules/grommet-icons/",
@@ -4093,7 +4058,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["homepage", "workspace:."],
             ["@parcel/core", "npm:2.0.0"],
             ["@parcel/transformer-inline-string", "npm:2.0.0"],
-            ["grommet", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:2.18.0"],
             ["grommet-icons", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:4.6.2"],
             ["htm", "npm:3.1.0"],
             ["parcel", "npm:2.0.0"],
@@ -5038,16 +5002,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["loose-envify", [
-        ["npm:1.4.0", {
-          "packageLocation": "./.yarn/cache/loose-envify-npm-1.4.0-6307b72ccf-6517e24e0c.zip/node_modules/loose-envify/",
-          "packageDependencies": [
-            ["loose-envify", "npm:1.4.0"],
-            ["js-tokens", "npm:4.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["lowlight", [
         ["npm:1.17.0", {
           "packageLocation": "./.yarn/cache/lowlight-npm-1.17.0-7b115fb21f-8e6e30ae64.zip/node_modules/lowlight/",
@@ -5090,28 +5044,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["promise-retry", "npm:2.0.1"],
             ["socks-proxy-agent", "npm:6.1.0"],
             ["ssri", "npm:8.0.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["markdown-to-jsx", [
-        ["npm:7.1.3", {
-          "packageLocation": "./.yarn/cache/markdown-to-jsx-npm-7.1.3-7b61f9f1da-9809d898ef.zip/node_modules/markdown-to-jsx/",
-          "packageDependencies": [
-            ["markdown-to-jsx", "npm:7.1.3"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:7.1.3", {
-          "packageLocation": "./.yarn/__virtual__/markdown-to-jsx-virtual-efbaa95962/0/cache/markdown-to-jsx-npm-7.1.3-7b61f9f1da-9809d898ef.zip/node_modules/markdown-to-jsx/",
-          "packageDependencies": [
-            ["markdown-to-jsx", "virtual:9068057810c87accdaf28e408ec77c454d72e9eef2ffda8da4112ab30031fecac4de7cee1f33eb40d16d619ab470b94b6a2ddae36e4dab2343e1c9b6c0dcd877#npm:7.1.3"],
-            ["@types/react", null],
-            ["react", null]
-          ],
-          "packagePeers": [
-            "@types/react",
-            "react"
           ],
           "linkType": "HARD",
         }]
@@ -6912,18 +6844,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["promise-retry", "npm:2.0.1"],
             ["err-code", "npm:2.0.3"],
             ["retry", "npm:0.12.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["prop-types", [
-        ["npm:15.7.2", {
-          "packageLocation": "./.yarn/cache/prop-types-npm-15.7.2-d7a04f2274-5eef82fdda.zip/node_modules/prop-types/",
-          "packageDependencies": [
-            ["prop-types", "npm:15.7.2"],
-            ["loose-envify", "npm:1.4.0"],
-            ["object-assign", "npm:4.1.1"],
-            ["react-is", "npm:16.13.1"]
           ],
           "linkType": "HARD",
         }]

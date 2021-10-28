@@ -1,30 +1,87 @@
 import { html } from 'htm/preact'
-import { render } from 'preact'
-import { Grommet, Box, Text, Paragraph, Heading, Main, Header, Footer, Button } from 'grommet'
 import { Home } from 'grommet-icons'
-import { StyleSheetManager, css } from 'styled-components'
+import styled, { StyleSheetManager, css } from 'styled-components'
 
-const theme = {
-  grommet: {
-    extend: css`
-      display: flex;
-      flex-direction: column
-    `
+import { Text } from './Typography'
+
+const PageLayout = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-color);
+`
+
+const Header = styled.header`
+  display: flex;
+  flex: 0 0 auto;
+  background-color: var(--brand-color);
+  justify-content: space-between;
+
+  /* padding for focus indicator */
+  padding-top: 2px;
+`
+
+const PageNav = styled.nav`
+  order: 1;
+`
+
+const SocialNav = styled.nav`
+  order: 2;
+`
+
+const SocialLogo = styled.img`
+  width: 16px;
+  height: 16px;
+`
+
+const Main = styled.main`
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+`
+
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  
+  /* Pull the letter descents above the page */
+  line-height: 1.5em;
+`
+
+const NavItem = styled.a`
+  display: inline-block;
+  padding: 12px;
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: white;
   }
-};
+`
 
 export const App = ({children}) => html`
-  <${StyleSheetManager} disableVendorPrefixes >
-    <${Grommet} plain theme=${theme} full="min">
-      <${Header} background="brand" >
-        <${Button} icon=${html`<${Home} />`} hoverIndicator />
+  <${PageLayout} >
+    <${Header} >
+      <${PageNav} >
+        <${NavItem} href='/' > Home <//>
+        <${NavItem} href='/blog' > Blog <//>
+        <${NavItem} href='/resume' > Résumé <//>
       <//>
-      <${Main} fill=${false} pad="large">
-        ${children}
+      <${SocialNav} >
+        <${NavItem} href='https://github.com/Seacant/'>
+          <${SocialLogo} src="https://github.com/favicon.ico" alt="GitHub" />
+        <//>
+        <${NavItem} href='https://www.linkedin.com/in/travis-fletcher-a13771173/'>
+          <${SocialLogo} src="https://www.linkedin.com/favicon.ico" alt="LinkedIn" />
+        <//>
       <//>
-      <${Footer} justify="center">
-        <${Text} > Copyright ©2021 <//>
-      <//>
+    <//>
+    <${Main} fill=${false} direction="row" justify='center' background="background">
+      ${children}
+    <//>
+    <${Footer} justify="center">
+      <${Text}> Made with ❤️ by Travis Fletcher <//>
     <//>
   <//>
 `
