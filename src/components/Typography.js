@@ -40,11 +40,11 @@ export const Paragraph = styled.p`
   line-height: 1.5em;
 `
 
-export const Code = styled.pre`
+export const Code = styled.code`
   font-family: var(--monospace-font);
   color: var(--code-text-color);
   font-size: 1.25em;
   
-  width: 80em;
+  width: 120em;
   margin: auto;
 `

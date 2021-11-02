@@ -17,6 +17,14 @@ const Header = styled.header`
   flex: 0 0 auto;
   background-color: var(--brand-color);
   justify-content: space-between;
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
 
   /* padding for focus indicator */
   padding-top: 2px;
