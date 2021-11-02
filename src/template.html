@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>Travis' homepage</title>
+
+  <meta name="author" content="Seacant">
+  <meta name="description" content="Personal Homepage for Travis. Currently under construction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <style>
+    @import "../reset.css";
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    /* Add a better focus indicator to everything */
+    *:focus-visible {
+      outline: 2px solid white;
+    }
+
+    /* Theme variables */
+    :root {
+      --bg-color: #323437;
+      --text-color: #d1d0c5;
+      --brand-color: #698c9d;
+
+      --reader-font: "Roboto", sans-serif;
+      --monospace-font: "Roboto Mono", monospace;
+
+      --reader-text-color: #d1d0c5;
+      --code-text-color: #d1d0c5;
+
+      --base-font-size: 24px;
+    }
+
+    /* This helps prevent a flash of white while the JS loads */
+    html {
+      background-color: var(--bg-color);
+    }
+  </style>
+  <% preact.headEnd %>
+</head>
+<body>
+  <% preact.bodyEnd %>
+</body>
+</html>

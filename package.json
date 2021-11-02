@@ -6,26 +6,21 @@
   "author": "Travis Fletcher <travis@tfletch.tech>",
   "license": "MIT",
   "dependencies": {
-    "@parcel/core": "^2.0.0",
     "htm": "^3.1.0",
-    "posthtml": "^0.16.5",
-    "posthtml-doctype": "^1.1.1",
-    "posthtml-include": "^1.7.2",
     "preact": "^10.5.15",
+    "preact-cli": "^3.3.1",
+    "preact-render-to-string": "^5.1.19",
+    "preact-router": "^3.2.1",
     "react-is": "^17.0.2",
     "styled-components": "^5.3.3"
-  },
-  "devDependencies": {
-    "@parcel/transformer-inline-string": "^2.0.0",
-    "parcel": "^2.0.0"
   },
   "alias": {
     "react": "preact/compat",
     "react-dom": "preact/compat"
   },
   "scripts": {
-    "start": "parcel serve",
-    "build": "parcel build"
+    "start": "preact watch",
+    "build": "preact build --no-sw --preload --dest dist/"
   },
   "source": "src/pages/index.html",
   "browserslist": "last 2 Chrome versions",
