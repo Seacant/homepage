@@ -1,4 +1,4 @@
-import { html, render } from 'htm/preact'
+import { render } from 'preact'
 import styled, { StyleSheetManager, css } from 'styled-components'
 
 import { Github, Linkedin, Mail } from './components/Icons'
@@ -65,35 +65,34 @@ const NavItem = styled.a`
   }
 `
 
-const App = () => html`
-  <${PageLayout} >
-    <${Header} >
-      <${PageNav} >
-        <${NavItem} href='/' > Home <//>
-        <${NavItem} href='/blog' > Blog <//>
-        <${NavItem} href='/resume' > Résumé <//>
-      <//>
-      <${SocialNav} >
-        <${NavItem} href='https://github.com/Seacant/'>
-          <${Github} />
-        <//>
-        <${NavItem} href='https://www.linkedin.com/in/travis-fletcher-a13771173/'>
-          <${Linkedin} />
-        <//>
-        <${NavItem} href='mailto:travis@tfletch.tech'>
-          <${Mail} />
-        <//>
-      <//>
-    <//>
-    <${Main} fill=${false} direction="row" justify='center' background="background">
-      <${Router}>
-        <${Homepage} path="/" />
-      <//>
-    <//>
-    <${Footer} justify="center">
-      <${Text}> Made with ❤️ by Travis Fletcher <//>
-    <//>
-  <//>
-`
+const App = () => <PageLayout>
+  <Header>
+    <PageNav>
+      <NavItem href='/' > Home </NavItem>
+      <NavItem href='/blog' > Blog </NavItem>
+      <NavItem href='/resume' > Résumé </NavItem>
+    </PageNav>
+    <SocialNav>
+      <NavItem href='https://github.com/Seacant/'>
+        <Github/>
+      </NavItem>
+      <NavItem href='https://www.linkedin.com/in/travis-fletcher-a13771173/'>
+        <Linkedin />
+      </NavItem>
+      <NavItem href='mailto:travis@tfletch.tech'>
+        <Mail/>
+      </NavItem>
+    </SocialNav>
+  </Header>
+  <Main fill={false} direction="row" justify='center' background="background">
+    <Router>
+      <Homepage path="/" />
+    </Router>
+  </Main>
+  <Footer justify="center">
+    <Text> Made with ❤️ by Travis Fletcher </Text>
+  </Footer>
+</PageLayout>
+
 
 export default App

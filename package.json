@@ -6,7 +6,6 @@
   "author": "Travis Fletcher <travis@tfletch.tech>",
   "license": "MIT",
   "dependencies": {
-    "htm": "^3.1.0",
     "preact": "^10.5.15",
     "preact-cli": "^3.3.1",
     "preact-render-to-string": "^5.1.19",

@@ -35,7 +35,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["htm", "npm:3.1.0"],
             ["preact", "npm:10.5.15"],
             ["preact-cli", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:3.3.1"],
             ["preact-render-to-string", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.1.19"],
@@ -7701,7 +7700,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["homepage", "workspace:."],
-            ["htm", "npm:3.1.0"],
             ["preact", "npm:10.5.15"],
             ["preact-cli", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:3.3.1"],
             ["preact-render-to-string", "virtual:708cd03a8b3728ac543dd12bdd077711665d078709a67ea1adf1337b26e2816a846f5f8eb0c4d7cf5b58202699a9346a54ebff6c204bcf5045683c9da423bf7c#npm:5.1.19"],
@@ -7739,15 +7737,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/hsla-regex-npm-1.0.0-f9d795def9-9aa6eb9ff6.zip/node_modules/hsla-regex/",
           "packageDependencies": [
             ["hsla-regex", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["htm", [
-        ["npm:3.1.0", {
-          "packageLocation": "./.yarn/cache/htm-npm-3.1.0-50861265c1-d6d00146bc.zip/node_modules/htm/",
-          "packageDependencies": [
-            ["htm", "npm:3.1.0"]
           ],
           "linkType": "HARD",
         }]
