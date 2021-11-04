@@ -1,33 +1,27 @@
 {
-  "name": "homepage",
-  "version": "0.0.1",
-  "description": "Using personal homepage to test new web technologies",
-  "repository": "git@github.com:Seacant/homepage.git",
-  "author": "Travis Fletcher <travis@tfletch.tech>",
-  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "lint": "next lint",
+    "build": "next build && next export",
+    "start": "next start"
+  },
   "dependencies": {
-    "@parcel/core": "^2.0.0",
-    "htm": "^3.1.0",
-    "posthtml": "^0.16.5",
-    "posthtml-doctype": "^1.1.1",
-    "posthtml-include": "^1.7.2",
+    "critters": "^0.0.14",
+    "next": "^12.0.2",
+    "next-plugin-preact": "^3.0.6",
     "preact": "^10.5.15",
+    "preact-render-to-string": "^5.1.19",
+    "react": "npm:@preact/compat@0.0.4",
+    "react-dom": "npm:@preact/compat@0.0.4",
     "react-is": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.3",
+    "styled-components": "^5.2.3",
+    "stylis-plugin-rtl": "1.0.0"
   },
   "devDependencies": {
-    "@parcel/transformer-inline-string": "^2.0.0",
-    "parcel": "^2.0.0"
-  },
-  "alias": {
-    "react": "preact/compat",
-    "react-dom": "preact/compat"
-  },
-  "scripts": {
-    "start": "parcel serve",
-    "build": "parcel build"
-  },
-  "source": "src/pages/index.html",
-  "browserslist": "last 2 Chrome versions",
-  "packageManager": "yarn@3.0.2"
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "<8.0.0",
+    "eslint-config-next": "12.0.2"
+  }
 }
