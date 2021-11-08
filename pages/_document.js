@@ -35,12 +35,7 @@ export default class MyDocument extends Document {
       <Head>
         <meta name="author" content="Seacant" />
         <meta name="description" content="Personal Homepage for Travis. Currently under construction" />
-        <title> {"Travis' Blog"} </title>
         <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <body>
         <Main />

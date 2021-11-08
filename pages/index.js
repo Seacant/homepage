@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { H1, Paragraph } from '../components/Typography'
+import { H1, Paragraph, Code } from '../components/Typography'
+import Head from 'next/head'
 
 const ContentLayout = styled.div`
   flex-basis: 70%;
@@ -8,6 +9,9 @@ const ContentLayout = styled.div`
 `
 
 const Home = () => <ContentLayout>
+  <Head>
+    <title> {"Travis' Homepage"} </title>
+  </Head>
   <H1> Under Construction </H1>
   <Paragraph>
     {"Welcome! You probably shouldn't be here yet."}

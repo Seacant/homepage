@@ -502,59 +502,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prefresh/babel-plugin@npm:0.4.1":
-  version: 0.4.1
-  resolution: "@prefresh/babel-plugin@npm:0.4.1"
-  checksum: bfa2389caec39a9996c12afc2c789fff313716dbee525dc3d10153a055581f648543ea1167cac909aeb16682ab4cb99147c715ba0fef3393cfd89be58fb43f5e
-  languageName: node
-  linkType: hard
-
-"@prefresh/core@npm:^1.3.1":
-  version: 1.3.2
-  resolution: "@prefresh/core@npm:1.3.2"
-  peerDependencies:
-    preact: ^10.0.0
-  checksum: 3056de5db344354e2f3edb39f9bfe8019a8dd029e0b2f475dfc58dac03ad2c21d67650e6832e76e89233f4906a4e34c0e161a4015161f1a2dcf65da594948cfb
-  languageName: node
-  linkType: hard
-
-"@prefresh/next@npm:^1.4.6":
-  version: 1.4.7
-  resolution: "@prefresh/next@npm:1.4.7"
-  dependencies:
-    "@prefresh/babel-plugin": 0.4.1
-    "@prefresh/core": ^1.3.1
-    "@prefresh/utils": ^1.0.0
-    "@prefresh/webpack": ^3.2.0
-  peerDependencies:
-    next: ^9.4.0 || ^10.0.0 || ^11.0.0
-    preact: ^10.4.0
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: 71c25b5a8d1a5e0380e85966a5e0b4806055945da77a17bbdf6138cc2bb076017afdfedf2879c51eb93fdaa56c7750fc31b98ebd68c9de1fbc2f0f950b77eb06
-  languageName: node
-  linkType: hard
-
-"@prefresh/utils@npm:^1.0.0, @prefresh/utils@npm:^1.1.0":
-  version: 1.1.1
-  resolution: "@prefresh/utils@npm:1.1.1"
-  checksum: ec1c83a2983d37c9ce96b1c481912c3ae411e4722dc38997131342baecfe9d6c59233f1a5ff0003e3592d29328c22202742b3768062242c055d4f58f4af14704
-  languageName: node
-  linkType: hard
-
-"@prefresh/webpack@npm:^3.2.0, @prefresh/webpack@npm:^3.3.0":
-  version: 3.3.2
-  resolution: "@prefresh/webpack@npm:3.3.2"
-  dependencies:
-    "@prefresh/core": ^1.3.1
-    "@prefresh/utils": ^1.1.0
-  peerDependencies:
-    "@prefresh/babel-plugin": ^0.4.0
-    preact: ^10.4.0
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: 775432b0064ac762e509872400a9d9300b56dd41f3148c2e5ed2d79d07f58cf5c1e881ff97db3c03ec7853aff69f87e7ef040a6974ca5eae9318b4885ddb153e
-  languageName: node
-  linkType: hard
-
 "@rushstack/eslint-patch@npm:^1.0.6":
   version: 1.0.9
   resolution: "@rushstack/eslint-patch@npm:1.0.9"
@@ -3110,7 +3057,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -3319,13 +3266,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"module-alias@npm:^2.0.0":
-  version: 2.2.2
-  resolution: "module-alias@npm:2.2.2"
-  checksum: 4b5543f834b484033e5bd184096ca8276b9195e32e88883ee6ea8d3a4789d97c470d26f5fa7271bd7a26588bf67e4d27dbdb594ee327aef1c9619d855dc78342
-  languageName: node
-  linkType: hard
-
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -3367,21 +3307,6 @@ __metadata:
   version: 0.6.2
   resolution: "negotiator@npm:0.6.2"
   checksum: dfddaff6c06792f1c4c3809e29a427b8daef8cd437c83b08dd51d7ee11bbd1c29d9512d66b801144d6c98e910ffd8723f2432e0cbf8b18d41d2a09599c975ab3
-  languageName: node
-  linkType: hard
-
-"next-plugin-preact@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "next-plugin-preact@npm:3.0.6"
-  dependencies:
-    "@prefresh/next": ^1.4.6
-    "@prefresh/webpack": ^3.3.0
-    module-alias: ^2.0.0
-  peerDependencies:
-    preact: ">=10"
-    preact-render-to-string: ">=5"
-    preact-ssr-prepass: ">=1"
-  checksum: d0cfceccd6d746ddd5765702ff1f078651dcbcefc00c20edea50f0e7f5ac7d599c2b7d525a2830864ab96a3ee1ea73dd718dc3b51a5296a33b714ebfd5e0b3db
   languageName: node
   linkType: hard
 
@@ -3939,24 +3864,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact-render-to-string@npm:^5.1.19":
-  version: 5.1.19
-  resolution: "preact-render-to-string@npm:5.1.19"
-  dependencies:
-    pretty-format: ^3.8.0
-  peerDependencies:
-    preact: ">=10"
-  checksum: b8b454d7b4bd93d6dcfc5e1269cfef1756e850c524e80340be62b88582cb88eb926a3edc0088f4dc2a454f56c1e09faa10bced081f25204342fd338275aa5af1
-  languageName: node
-  linkType: hard
-
-"preact@npm:^10.5.15":
-  version: 10.5.15
-  resolution: "preact@npm:10.5.15"
-  checksum: 1c9f025ed6ff9c6cbe85da4feb88011795914d615244089396d1157376897a09f478eac0d582c66bc5a96c2841ebd9f8dfbe0a28e8c1820bdd7c314083350d40
-  languageName: node
-  linkType: hard
-
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -3968,13 +3875,6 @@ __metadata:
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
   checksum: 9c082500d1e93434b5b291bd651662936b8bd6204ec9fa17d563116a192d6d86b98f6d328526b4e8d783c07d5499e2614a807520249692da9ec81564b2f439cd
-  languageName: node
-  linkType: hard
-
-"pretty-format@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "pretty-format@npm:3.8.0"
-  checksum: 21a114d43ef06978f8f7f6212be4649b0b094f05d9b30e14e37550bf35c8ca24d8adbca9e5adc4cc15d9eaf7a1e7a30478a4dc37b30982bfdf0292a5b385484c
   languageName: node
   linkType: hard
 
@@ -4102,12 +4002,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:@preact/compat@0.0.4, react@npm:@preact/compat@0.0.4":
-  version: 0.0.4
-  resolution: "@preact/compat@npm:0.0.4"
+"react-dom@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "react-dom@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+    scheduler: ^0.20.2
   peerDependencies:
-    preact: "*"
-  checksum: 97126e5e2c72cb84c88c5c06ae517bc23720339e97bb436c2ead18306520e315a5b9660fd018a5b6127ca6158f1d709e5cefd6bf768572b8c96249b482a6c658
+    react: 17.0.2
+  checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
   languageName: node
   linkType: hard
 
@@ -4132,12 +4036,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ssr-prepass@npm:preact-ssr-prepass@^1.1.3":
-  version: 1.2.0
-  resolution: "preact-ssr-prepass@npm:1.2.0"
+"react-ssr-prepass@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "react-ssr-prepass@npm:1.4.0"
   peerDependencies:
-    preact: ">=10 || ^10.0.0-beta.0 || ^10.0.0-alpha.0"
-  checksum: 5c27122cb5e0838d25ffc8be4e63641c9ce7637a9e210d32852be609bee74cb68f79601089270b08812e45f779f81a316fb8a7e6ebb27a3b1493b17c36df41f6
+    react: ^16.8.0 || ^17.0.0
+  checksum: dc7db3f15128ca2facca44a0088de1378ffc2852ad0852eeb1b063350a5019a0353f8d4a0bbfdd0a68aaf7ed865c08ecfbf042b882492a4c5bca2b64535df257
+  languageName: node
+  linkType: hard
+
+"react@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: b254cc17ce3011788330f7bbf383ab653c6848902d7936a87b09d835d091e3f295f7e9dd1597c6daac5dc80f90e778c8230218ba8ad599f74adcc11e33b9d61b
   languageName: node
   linkType: hard
 
@@ -4305,13 +4219,10 @@ __metadata:
     eslint: <8.0.0
     eslint-config-next: 12.0.2
     next: ^12.0.2
-    next-plugin-preact: ^3.0.6
-    preact: ^10.5.15
-    preact-render-to-string: ^5.1.19
-    react: "npm:@preact/compat@0.0.4"
-    react-dom: "npm:@preact/compat@0.0.4"
+    react: ^17.0.2
+    react-dom: ^17.0.2
     react-is: ^17.0.2
-    react-ssr-prepass: "npm:preact-ssr-prepass@^1.1.3"
+    react-ssr-prepass: ^1.4.0
     styled-components: ^5.2.3
     stylis-plugin-rtl: 1.0.0
   languageName: unknown
@@ -4344,6 +4255,16 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.20.2":
+  version: 0.20.2
+  resolution: "scheduler@npm:0.20.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: c4b35cf967c8f0d3e65753252d0f260271f81a81e427241295c5a7b783abf4ea9e905f22f815ab66676f5313be0a25f47be582254db8f9241b259213e999b8fc
   languageName: node
   linkType: hard
 
