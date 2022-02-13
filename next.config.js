@@ -1,4 +1,5 @@
-
 module.exports = {
-  experimental: {optimizeCss: true}
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: { }
 }
