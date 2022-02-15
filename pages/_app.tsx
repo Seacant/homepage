@@ -3,10 +3,9 @@ import { Header } from '../components/Header'
 
 import '../styles.css'
 
-
 function MyApp({Component, pageProps}: AppProps) {
   return <div className="h-screen flex flex-col bg-zinc-800">
-    <Header></Header>
+    <Header />
     <main className="flex flex-1 justify-center text-lg text-zinc-200 leading-relaxed py-4">
       <Component {...pageProps} />
     </main>

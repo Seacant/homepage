@@ -9,15 +9,5 @@
 
 /* Theme variables */
 :root {
-  --bg-color: #323437;
-  --text-color: #d1d0c5;
-  --brand-color: #698c9d;
-
-  --reader-font: sans-serif;
-  --monospace-font: monospace;
-
-  --reader-text-color: #d1d0c5;
-  --code-text-color: #d1d0c5;
-
-  --base-font-size: 24px;
+  font-size: 18px;
 }
