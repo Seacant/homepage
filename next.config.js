@@ -1,5 +1,5 @@
-const withPreact = require('next-plugin-preact')
-
-module.exports = withPreact({
-  experimental: {optimizeCss: true}
-})
+module.exports = {
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: { }
+}
