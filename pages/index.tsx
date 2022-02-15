@@ -12,8 +12,6 @@ const Home = () => <div className="basis-1/2 pt-4em flex flex-col">
     <Image className="rounded-full" src={profilePic} height="128" width="128" alt="Picture of the author" placeholder="blur"></Image>
   </span>
 
-  <h1 className="text-4xl leading-relaxed"> Home </h1>
-
   <h2 className="text-2xl leading-8">Intro</h2>
   <p className="indent-8">{` 
     Welcome! My name is Fletch, and I am a Software Engineer working in EdTech.
