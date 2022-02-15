@@ -26,7 +26,7 @@ const Home = () => <div className="container basis-3/4 pt-4em flex flex-col spac
     Welcome! My name is Fletch, and I am a Software Engineer working in Ed-Tech.
 
     I'm not currently looking for work, but feel free to check out my `}
-    <ProseLink href="/resume">Resume</ProseLink>
+    <ProseLink href="/resume">Résumé</ProseLink>
     {`
     or even reach out (top right) if you think you can convince me otherwise.
   `}
