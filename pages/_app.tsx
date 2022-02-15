@@ -27,9 +27,9 @@ const NavLink: React.FC<NavLinkProps> = ({href, children}) => <Link href={href} 
 
 function MyApp({Component, pageProps}: AppProps) {
   return <div className="h-screen flex flex-col bg-zinc-800">
-    <header className="flex flex-none justify-between font-serif text-lg tracking-wide py-px bg-cyan-700" >
+    <header className="flex flex-none justify-between font-serif text-xl tracking-wide py-px bg-cyan-700" >
       <nav className="order-1 px-2">
-        <NavLink href="/" > Home </NavLink>
+        <NavLink href="/" > <h1>Home</h1></NavLink>
         <NavLink href="/blog" > Blog </NavLink>
         <NavLink href="/resume" > Résumé </NavLink>
       </nav>
