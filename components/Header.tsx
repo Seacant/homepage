@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import {Github, Linkedin, Mail} from '../components/Icons'
+import { Github, Linkedin, Mail } from '../components/Icons'
 
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 type NavItemProps = {
   title: string
@@ -12,7 +12,6 @@ type NavItemProps = {
 const NavItem: React.FC<NavItemProps> = ({title, href, children}) => <a
   title={title}
   href={href}
-  className="inline-block leading-8 p-2 align-middle text-inherit hover:text-white"
 >
   {children}
 </a>
@@ -21,16 +20,18 @@ type NavLinkProps = {
   href: string
   children: React.ReactNode
 }
-const NavLink: React.FC<NavLinkProps> = ({href, children}) => <Link href={href} passHref >
-  <a className="inline-block leading-8 px-2 text-inherit hover:text-white">{children}</a>
+const NavLink: React.FC<NavLinkProps> = ({href, children}) => <Link 
+  href={href}
+>
+  {children}
 </Link>
 
 export const Header = () => {
   const router = useRouter()
 
   return (
-    <header className="flex flex-none justify-between font-serif text-xl tracking-wide py-px bg-cyan-700" >
-      <nav className="order-1 px-2">
+    <header>
+      <nav>
         {
           [
             ["/", "Home"],
@@ -47,7 +48,7 @@ export const Header = () => {
           )
         }
       </nav>
-      <nav className="order-2">
+      <address>
         <NavItem href="https://github.com/Seacant/" title="GitHub">
           <Github />
         </NavItem>
@@ -57,7 +58,7 @@ export const Header = () => {
         <NavItem href="mailto:travis@tfletch.tech" title="Email">
           <Mail />
         </NavItem>
-      </nav>
+      </address>
     </header>
   )
 }
