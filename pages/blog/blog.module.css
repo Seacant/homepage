@@ -1,0 +1,49 @@
+.blog_card {
+  border: 1px solid var(--main-prose-color);
+  border-radius: 0 16px;
+  padding: 2ch 2ch 0 2ch;
+}
+
+.blog_card > h2 {
+  margin: 0;
+}
+
+.blog_card > p {
+  padding-left: 2em;
+}
+
+.avatar {
+  border-radius: 16px;
+}
+
+.article_info {
+  display: flex;
+  gap: 1ch;
+  line-height: 32px;
+}
+
+.article_info  address {
+  display: inline;
+}
+
+.article_info .avatar {
+  vertical-align: bottom;
+}
+
+
+/* promote the content and ensure it is centered in the grid */
+.article {
+  text-align: justify;
+  display: contents;
+}
+.article > * {
+  grid-column: 2;
+}
+
+.full_bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: center;
+}
