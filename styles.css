@@ -39,6 +39,10 @@ a {
   text-underline-offset: 2px;
 }
 
+pre {
+  overflow: auto;
+}
+
 svg {
   color: var(--main-prose-color);
 }
@@ -56,6 +60,12 @@ header {
   justify-content: space-between;
   width: min(140ch, 100%);
   line-height: 2em;
+}
+
+@media print {
+  header, footer {
+    visibility: hidden;
+  }
 }
 
 header h1 {

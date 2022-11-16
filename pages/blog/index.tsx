@@ -7,7 +7,7 @@ import { GettingStartedCard } from './getting-started'
 
 const Blog = () => <>
   <Head>
-    <title> {"Travis' Blog"} </title>
+    <title>Travis' Blog</title>
   </Head>
   
   <GettingStartedCard />

@@ -1,0 +1,72 @@
+@media (min-width: 8.5in) {
+  .letter {
+    width: 7.5in;
+  }
+}
+
+.letter {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+}
+
+.letter section {
+  display: contents;
+  break-before: auto;
+  break-inside: avoid;
+}
+
+.letter .right {
+  float: right;
+}
+
+.letter .center {
+  text-align: center;
+}
+
+.letter section:has(.block_right) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.letter section .block_right {
+  text-align: right;
+}
+
+.retro {
+  font-family: monospace;
+  line-height: 1.1em;
+}
+
+.retro :is(h1, h2, h3, h4, h5, h6) {
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: normal;
+}
+
+.retro section > div > div {
+  margin-left: 2ch;
+}
+
+@media print {
+  .retro {
+    margin-left: -.25in;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .retro a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .banner {
+    display: none;
+  }
+}
+
+.banner {
+  padding: 1ch;
+  margin: auto;
+  margin-bottom: 1ch;
+}

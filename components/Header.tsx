@@ -55,7 +55,7 @@ export const Header = () => {
         <NavItem href="https://www.linkedin.com/in/travis-fletcher-a13771173/" title="LinkedIn">
           <Linkedin />
         </NavItem>
-        <NavItem href="mailto:travis@tfletch.tech" title="Email">
+        <NavItem href="mailto:contact@tfletch.tech" title="Email">
           <Mail />
         </NavItem>
       </address>
