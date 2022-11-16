@@ -9,6 +9,7 @@
   line-height: 1.5em;
   font-family: Helvetica;
 
+  color-scheme: light dark;
 
   --main-prose-color: #333;
   --alt-prose-color: #d4d0c940;
