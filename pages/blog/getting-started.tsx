@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Head from 'next/head'
 import styles from './blog.module.css'
 import profilePic from '../../public/me.png'
 import { stripIndent, html } from 'common-tags'
@@ -9,6 +9,9 @@ import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 
 const Article = () => <>
+  <Head>
+    <title> Learning to &lt;code/&gt; </title>
+  </Head>
   <article className={styles.article}>
     <h1> Learning to &lt;code/&gt; </h1>
     <div className={styles.article_info}>
