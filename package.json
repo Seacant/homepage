@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "next",
     "lint": "next lint",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "start": "next build && next start"
   },
   "dependencies": {
     "@types/common-tags": "^1.8.1",
