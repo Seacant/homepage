@@ -1,6 +1,17 @@
 /* Add a better focus indicator to everything */
-*:focus-visible {
-  outline: 2px solid white;
+@media not (prefers-reduced-motion) {
+  * {
+    outline-color: var(--alt-prose-color);
+    transition: text-decoration 250ms, outline-color 250ms;
+  }
+}
+
+a:focus-visible, a:hover {
+  text-decoration-color: #00000000;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--emphasis-prose-color);
 }
 
 /* Theme variables */
@@ -19,9 +30,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-prose-color: #A7B4A7;
-    --alt-prose-color: #161118;
-    --link-prose-color: #9AF;
+    --main-prose-color: #c7beb4;
+    --alt-prose-color: #151316;
+    --link-prose-color: #d58080;
     --emphasis-prose-color: #dd3a31;
   }
 }
@@ -44,6 +55,10 @@ pre {
   overflow: auto;
 }
 
+code {
+  font-family: var(--mono-font), monospace;
+}
+
 svg {
   color: var(--main-prose-color);
 }
@@ -60,7 +75,8 @@ header {
   display: flex;
   justify-content: space-between;
   width: min(140ch, 100%);
-  line-height: 2em;
+  line-height: 1.3em;
+  padding-top: .4em;
 }
 
 @media print {
@@ -72,6 +88,10 @@ header {
 header h1 {
   font-size: inherit;
   margin: 0;
+}
+
+footer {
+  margin-top: 1em;
 }
 
 header > nav, header > address {

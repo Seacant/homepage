@@ -10,9 +10,9 @@ const Resume = () => <>
     Psst! Need a PDF?
   </a>
   <article className={[styles.letter, styles.retro].join(" ")}>
-    <section>
+    <section className={styles.block_left}>
       <div>
-        <h1> Travis Fletcher </h1>
+        <h2> Travis Fletcher </h2>
         <span> Full Stack Senior Software Engineer </span>
       </div>
       <address className={styles.block_right}>
@@ -20,7 +20,7 @@ const Resume = () => <>
           <a href="github.com/Seacant"> GitHub @ Seacant </a>
         </div>
         <div>
-          <a href="tfletch.tech"> tfletch.tech </a>
+          <a href="https://tfletch.tech"> tfletch.tech </a>
         </div>
         <div>
           <a href="mailto:contact@tfletch.tech"> contact@tfletch.tech </a>
@@ -30,41 +30,39 @@ const Resume = () => <>
     <section>
       <h2>Education</h2>
       <div> 
-        ➢ Loveland High School 
+        Loveland High School 
         <span className={styles.right}>2014-2017</span> 
-        <div>GPA: 3.3</div>
       </div>
 
       <div>
-        ➢ Northern Kentucky University 
+        Northern Kentucky University 
         <span className={styles.right}>2017-2021</span> 
         <div>Data Science Major & Management Minor </div>
-        <div>GPA: 3.5</div>
       </div>
     </section>
     <section>
       <h2>Technical Skills</h2> 
       <div>
-        ➢ Languages: 
+        Languages: 
         <div> Typescript, Ruby, HTML/CSS, Perl, SQL, Rust </div>
       </div>
       <div>
-        ➢ Technologies: 
+        Technologies: 
         <div> React, Ruby on Rails, Terraform, AWS </div>
       </div>
       <div>
-        ➢ Techniques:
+        Techniques:
         <div> Domain-Driven Design, Functional Programming, Test-Driven Development  </div>
       </div>
       <div>
-        ➢ Specialties: 
-        <div> Performance & Scalability, Software/Feature Architecture, Accessibility, Machine Learning </div>
+        Specialties: 
+        <div> Software/Feature Architecture, Performance & Scalability, Accessibility, Machine Learning </div>
       </div>
     </section>
     <section>
       <h2>Employment</h2>
       <div>
-        ➢ Instructure
+        Instructure
           <div>
             Senior Software Engineer
             <span className={styles.right}>
@@ -90,18 +88,14 @@ const Resume = () => <>
           </ul>
       </div>
       <div>
-        ➢ Certica Solutions 
+        Certica Solutions 
           <div>
             Software Engineer
-            <span className={styles.right}>
-              2019-2021
-            </span>
+            <span className={styles.right}> 2019-2021 </span>
           </div>
           <div>
             Junior Software Engineer 
-            <span className={styles.right}>
-              2015-2019 
-            </span>
+            <span className={styles.right}> 2015-2019 </span>
           </div>
   
           <ul>
@@ -112,31 +106,35 @@ const Resume = () => <>
           </ul>
       </div>
       <div>
-        ➢ Northern Kentucky University Research Assistant 
-          <span className={styles.right}> 2018-2019 </span>
-          <div>
-            Developed an Internet of Things security management solution, Java Experience
-          </div>
+        Northern Kentucky University
+        <div>
+          Research Assistant 
+            <span className={styles.right}> 2018-2019 </span>
+        </div>
+        <ul>
+          <li> Developed an Internet of Things security management solution, Java Experience </li>
+          <li> Presented findings at NKU Celebration of Student Research </li>
+        </ul>
       </div>
 
     </section>
     <section>
       <h2> Experience </h2>
       <div>
-        ➢ FTC Robotics 
+        FTC Robotics 
           <span className={styles.right}> 2015-2017 </span>
           <div> Lead Programmer </div>
           <div> Java, Android Studio, Github, Gradle, and Vim </div>
           <div> Created a robot using Java to compete in various challenges </div>
       </div>
       <div>
-        ➢ UC IT Expo 
+        UC IT Expo 
           <span className={styles.right}> 2016 </span>
           <div> Lead Programmer; 1st place (High School category) </div>
           <div> Developed a tracking camera for lecture recording </div>
       </div>
       <div>
-        ➢ RevolutionUC 
+        RevolutionUC 
           <span className={styles.right}> 2017 </span>
           <div> 24-hour hackathon </div>
           <div> V-Arrrgh - Virtual reality therapy for Amblyopia, C#; 1st place </div>
