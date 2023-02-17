@@ -1,15 +1,15 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
-import styles from './blog.module.css'
+import { Card } from '../../components/BlogCard'
 
-import { GettingStartedCard } from './getting-started'
+import { blogData } from '../../data/blogs.json'
 
 const Blog = () => <>
   <Head>
     <title>Travis' Blog</title>
   </Head>
   
-  <GettingStartedCard />
+  {/* grab the last three blogs */}
+  { blogData.slice(-3).map(Card) }
 </>
 export default Blog;

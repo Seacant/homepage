@@ -28,19 +28,6 @@ const Resume = () => <>
       </address>
     </section>
     <section>
-      <h2>Education</h2>
-      <div> 
-        Loveland High School 
-        <span className={styles.right}>2014-2017</span> 
-      </div>
-
-      <div>
-        Northern Kentucky University 
-        <span className={styles.right}>2017-2021</span> 
-        <div>Data Science Major & Management Minor </div>
-      </div>
-    </section>
-    <section>
       <h2>Technical Skills</h2> 
       <div>
         Languages: 
@@ -57,6 +44,19 @@ const Resume = () => <>
       <div>
         Specialties: 
         <div> Software/Feature Architecture, Performance & Scalability, Accessibility, Machine Learning </div>
+      </div>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <div> 
+        Loveland High School 
+        <span className={styles.right}>2014-2017</span> 
+      </div>
+
+      <div>
+        Northern Kentucky University 
+        <span className={styles.right}>2017-2021</span> 
+        <div>Data Science Major & Management Minor </div>
       </div>
     </section>
     <section>
@@ -84,7 +84,7 @@ const Resume = () => <>
               Worked extensively with Product to plan projects that solved customer needs
             </li>
             <li> Led technical discussions during Software Architecture Planning </li>
-            <li> Championed accessibility considerations during front-end discussions </li>
+            <li> Championed accessible web design during front-end discussions </li>
           </ul>
       </div>
       <div>
@@ -125,19 +125,19 @@ const Resume = () => <>
           <span className={styles.right}> 2015-2017 </span>
           <div> Lead Programmer </div>
           <div> Java, Android Studio, Github, Gradle, and Vim </div>
-          <div> Created a robot using Java to compete in various challenges </div>
+          <div> Created a robot using Java to compete in predetermined challenges </div>
       </div>
       <div>
         UC IT Expo 
           <span className={styles.right}> 2016 </span>
           <div> Lead Programmer; 1st place (High School category) </div>
-          <div> Developed a tracking camera for lecture recording </div>
+          <div> Developed a low-cost camera mount to follow a lecturer during class </div>
       </div>
       <div>
         RevolutionUC 
           <span className={styles.right}> 2017 </span>
           <div> 24-hour hackathon </div>
-          <div> V-Arrrgh - Virtual reality therapy for Amblyopia, C#; 1st place </div>
+          <div> V-Arrrgh - Virtual Reality therapy program for Amblyopia, C#; 1st place </div>
       </div>
     </section>
   </article>
