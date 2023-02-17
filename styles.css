@@ -1,6 +1,6 @@
 /* Add a better focus indicator to everything */
 @media not (prefers-reduced-motion) {
-  * {
+  a {
     outline-color: var(--alt-prose-color);
     transition: text-decoration 250ms, outline-color 250ms;
   }
@@ -69,14 +69,15 @@ body > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  gap: 1ch;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   width: min(140ch, 100%);
-  line-height: 1.3em;
-  padding-top: .4em;
+  padding-top: 1ch;
 }
 
 @media print {
@@ -90,15 +91,11 @@ header h1 {
   margin: 0;
 }
 
-footer {
-  margin-top: 1em;
-}
-
 header > nav, header > address {
   display: flex;
-  gap: 1ch;
-  margin-left: 1ch;
-  margin-right: 1ch;
+  gap: 1.5ch;
+  margin-left: 1.5ch;
+  margin-right: 1.5ch;
 }
 
 main {
@@ -107,9 +104,9 @@ main {
   display: grid;
   align-content: start;
   grid-template-columns:
-    1fr
-    min(65ch, 100%)
-    1fr;
+    minmax(1ch, 1fr)
+    min(65ch, calc(100% - 2ch))
+    minmax(1ch, 1fr);
 }
 
 main > * {

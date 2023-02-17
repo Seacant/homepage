@@ -1,4 +1,4 @@
-export const Github = () => <svg height='16px' viewBox="0 0 24 24">
+export const Github = () => <svg height='24px' viewBox="0 0 24 24">
   <path 
     fill="currentColor"
     fillRule="evenodd"
@@ -6,7 +6,7 @@ export const Github = () => <svg height='16px' viewBox="0 0 24 24">
   ></path>
 </svg>
 
-export const Linkedin = () => <svg height='16px' viewBox="0 0 24 24">
+export const Linkedin = () => <svg height='24px' viewBox="0 0 24 24">
   <path 
     fill="currentColor"
     fillRule="evenodd"
@@ -14,7 +14,7 @@ export const Linkedin = () => <svg height='16px' viewBox="0 0 24 24">
   ></path>
 </svg>
 
-export const Mail = () => <svg height='16px' viewBox="0 0 24 24">
+export const Mail = () => <svg height='24px' viewBox="0 0 24 24">
   <path 
     fill="currentColor"
     fillRule="evenodd"
