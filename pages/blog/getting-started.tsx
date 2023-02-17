@@ -7,7 +7,6 @@ import { stripIndent, html } from 'common-tags'
 
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
-
 const Article = () => <>
   <Head>
     <title> Learning to &lt;code/&gt; </title>
@@ -216,19 +215,4 @@ const Article = () => <>
     </p>
   </article>
 </>
-
-export const GettingStartedCard = () => 
-  <article className={styles.blog_card}>
-    <h2> 
-      <Link href="blog/getting-started">
-        Learning to &lt;code/&gt;
-      </Link>
-    </h2>
-    <p>
-      Is manually coded HTML the new CMS Hotness? Probably not, but it's pretty
-      fun to play around with. Let's get our toes wet by taking a look at the
-      cool CSS we can use to spice up our blog posts.
-    </p>
-  </article>
-
 export default Article
