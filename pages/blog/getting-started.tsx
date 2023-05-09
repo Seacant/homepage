@@ -1,24 +1,26 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Head from 'next/head'
 import styles from './blog.module.css'
-import profilePic from '../../public/me.png'
 import { stripIndent, html } from 'common-tags'
 
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { ArticleInfo } from '../../components/ArticleInfo'
+import styled from 'styled-components';
+import { Article as Styled, FullWidth } from '../../components/Article';
+
+const FullWidthSyntaxHighlighter = styled(FullWidth).attrs({
+  as: SyntaxHighlighter,
+})``
 
 const Article = () => <>
   <Head>
     <title> Learning to &lt;code/&gt; </title>
   </Head>
-  <article className={styles.article}>
+  <Styled>
     <h1> Learning to &lt;code/&gt; </h1>
-    <div className={styles.article_info}>
-      <Image className={styles.avatar} src={profilePic} height="32" width="32" alt="Picture of the author"></Image>
-      <address> By Travis Fletcher </address>
-      on 
-      <time dateTime="2022-10-30"> 30 Oct, 2022 </time>
-    </div>
+    <ArticleInfo date={new Date(
+      Date.UTC(2022, 9, 31, 20, 54, 54)
+    )} />
 
     <p>
       This is a coding blog, so it makes sense to start out by making sure we
@@ -58,9 +60,9 @@ const Article = () => <>
     </pre>
 
     <p>
-      <code>stripIndent`...`</code> is a <a 
+      <code>stripIndent`...`</code> is a <Link
         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
-      >Tagged Template Literal</a> and allows us to write our code at the
+      >Tagged Template Literal</Link> and allows us to write our code at the
       current indent level without the spacing making it into the final doc,
       while still maintaining its internal indentation. Super neat!
     </p>
@@ -144,7 +146,7 @@ const Article = () => <>
        something akin to 'full-bleed' working.
     </p>
 
-    <SyntaxHighlighter className={styles.full_bleed} language="javascript" useInlineStyles={false}>{ stripIndent`
+    <FullWidthSyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent`
       import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
       <SyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent\`
@@ -154,15 +156,15 @@ const Article = () => <>
             console.error("There's nobody to read me :(")
           }
       \`}</SyntaxHighlighter>
-    `}</SyntaxHighlighter>
+    `}</FullWidthSyntaxHighlighter>
 
     <p>
       And, just to test, if our content is <em>really</em> long...
     </p>
 
-    <SyntaxHighlighter className={styles.full_bleed} language="javascript" useInlineStyles={false}>{ stripIndent`
+    <FullWidthSyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent`
     if(you_use_really_long_variable_names_and_hate_newlines_because_youre_a_l33t_hacker_man){console.log("what a cool guy")}
-    `}</SyntaxHighlighter>
+    `}</FullWidthSyntaxHighlighter>
 
 
     <p>
@@ -204,15 +206,15 @@ const Article = () => <>
     `}</SyntaxHighlighter>
 
     <p>
-      This is almost entirely inspired by <a 
+      This is almost entirely inspired by <Link
         href="https://css-tricks.com/full-bleed/"
-      >CSS Tricks's Full Bleed article</a> with the tricky bit being that we
+      >CSS Tricks's Full Bleed article</Link> with the tricky bit being that we
       want to declare our layout at the <code>main</code> tag but our semantic
       HTML-ness means we are surrounded by an <code>article</code> before we get
       to the actual content. By declaring the article as <code>display: contents</code>,
       we are able to hide the article tag from the DOM and promote its children
       to be in the grid instead.
     </p>
-  </article>
+  </Styled>
 </>
 export default Article

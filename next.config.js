@@ -1,5 +1,8 @@
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: { }
+  experimental: { },
+  compiler: {
+    styledComponents: true,
+  }
 }

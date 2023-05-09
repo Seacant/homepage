@@ -1,7 +1,5 @@
 .blog_card {
-  border: 1px solid var(--main-prose-color);
-  border-radius: 0 16px;
-  padding: 2ch 2ch 0 2ch;
+  padding: 2ch;
 }
 
 .blog_card > h2 {
@@ -9,5 +7,5 @@
 }
 
 .blog_card > p {
-  padding-left: 2em;
+  padding-left: 2ch;
 }

@@ -1,10 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 import profilePic from '../public/me.png'
 
 import styles from './index.module.css'
+
+const Avatar = styled(Image)`
+  display: block;
+  margin: auto;
+
+  border-radius: 64px;
+`
 
 type proseLinkProps = {
   href: string
@@ -21,7 +29,11 @@ const Home = () => <>
     <title>Travis' Homepage</title>
   </Head>
 
-  <Image className={styles.avatar} src={profilePic} height="128" width="128" alt="Picture of the author"></Image>
+  <Avatar 
+    src={profilePic}
+    height="128" width="128" 
+    alt="Picture of the author"
+  />
 
   <section>
     <h2>Intro</h2>
