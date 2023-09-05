@@ -25,11 +25,13 @@ a:focus-visible {
   font-family: Helvetica;
 
   color-scheme: light dark;
+	scrollbar-gutter: both-edges stable;
 
   --main-prose-color: #333;
-  --alt-prose-color: #d4d0c940;
+  --alt-prose-color: #d4d0c9;
   --link-prose-color: #5a1515;
   --emphasis-prose-color: #971a1a;
+
 }
 
 @media (prefers-color-scheme: dark) {
