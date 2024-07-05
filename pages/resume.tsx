@@ -13,7 +13,7 @@ const PdfButton = styled(Button)`
 
 const RetroLetter = styled.article`
   @media print {
-    margin-left: -.25in;
+    margin-left: -0.25in;
     font-size: 14px;
     line-height: 14px;
     color: black;
@@ -23,7 +23,6 @@ const RetroLetter = styled.article`
       color: black;
     }
   }
-
 
   /* since we are taking away the normal site gutters, add back 
    * something reminiscent of real paper margins
@@ -45,7 +44,7 @@ const RetroLetter = styled.article`
   font-weight: 500;
 
   & ul {
-    margin: .25em;
+    margin: 0.25em;
   }
 `;
 
@@ -57,23 +56,23 @@ const GenericSection = styled.section`
 
 const SectionProse = styled.div`
   margin-left: 2ch;
-`
+`;
 
 const Introduction = styled(GenericSection)`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 const ContactInfo = styled.address`
   text-align: right;
 `;
 
-const Year = styled.span<{single?: true}>`
+const Year = styled.span<{ $single?: true }>`
   float: right;
-  
+
   /* 20xx-20xx is 9 characters */
-  ${({single}) => single ? 'width: 5ch' : 'width: 9ch'}
-`
+  ${({ $single }) => ($single ? "width: 5ch" : "width: 9ch")}
+`;
 
 const Header = styled.h2`
   text-transform: uppercase;
@@ -81,15 +80,12 @@ const Header = styled.h2`
   line-height: 1.1em;
 `;
 
-
 const Resume = () => (
   <>
     <Head>
       <title>Travis' Resume</title>
     </Head>
-    <PdfButton onClick={() => window.print()}>
-      Psst! Need a PDF?
-    </PdfButton>
+    <PdfButton onClick={() => window.print()}>Psst! Need a PDF?</PdfButton>
     <RetroLetter>
       <Introduction>
         <div>
@@ -112,7 +108,10 @@ const Resume = () => (
         <Header>Technical Skills</Header>
         <div>
           Languages:
-          <SectionProse> Typescript, Ruby, HTML/CSS, Perl, SQL, Rust </SectionProse>
+          <SectionProse>
+            {" "}
+            Typescript, Ruby, HTML/CSS, Perl, SQL, Rust{" "}
+          </SectionProse>
         </div>
         <div>
           Technologies:
@@ -231,22 +230,28 @@ const Resume = () => (
           FTC Robotics
           <Year>2015-2017</Year>
           <SectionProse> Lead Programmer </SectionProse>
-          <SectionProse> Java, Android Studio, Github, Gradle, and Vim </SectionProse>
+          <SectionProse>
+            {" "}
+            Java, Android Studio, Github, Gradle, and Vim{" "}
+          </SectionProse>
           <SectionProse>
             Created a robot using Java to compete in predetermined challenges
           </SectionProse>
         </div>
         <div>
           UC IT Expo
-          <Year single> 2016 </Year>
-          <SectionProse> Lead Programmer; 1st place (High School category) </SectionProse>
+          <Year $single> 2016 </Year>
+          <SectionProse>
+            {" "}
+            Lead Programmer; 1st place (High School category){" "}
+          </SectionProse>
           <SectionProse>
             Developed a low-cost camera mount to follow a lecturer during class
           </SectionProse>
         </div>
         <div>
           RevolutionUC
-          <Year single> 2017 </Year>
+          <Year $single> 2017 </Year>
           <SectionProse> 24-hour hackathon </SectionProse>
           <SectionProse>
             V-Arrrgh - Virtual Reality therapy program for Amblyopia, C#; 1st
