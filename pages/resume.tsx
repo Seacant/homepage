@@ -54,8 +54,23 @@ const GenericSection = styled.section`
   break-inside: avoid;
 `;
 
+const Year = styled.span<{ $single?: true }>`
+  float: right;
+
+  /* 20xx-20xx is 9 characters */
+  ${({ $single }) => ($single ? "width: 5ch" : "width: 9ch")}
+`;
+
 const SectionProse = styled.div`
   margin-left: 2ch;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & > ${Year} {
+    margin-left: auto;
+  }
 `;
 
 const Introduction = styled(GenericSection)`
@@ -65,13 +80,11 @@ const Introduction = styled(GenericSection)`
 
 const ContactInfo = styled.address`
   text-align: right;
-`;
 
-const Year = styled.span<{ $single?: true }>`
-  float: right;
-
-  /* 20xx-20xx is 9 characters */
-  ${({ $single }) => ($single ? "width: 5ch" : "width: 9ch")}
+  // leave some room for focus outline
+  > div {
+    padding-block: 2px;
+  }
 `;
 
 const Header = styled.h2`
@@ -94,7 +107,7 @@ const Resume = () => (
         </div>
         <ContactInfo>
           <div>
-            <a href="github.com/Seacant"> GitHub @ Seacant </a>
+            <a href="https://github.com/Seacant"> GitHub @ Seacant </a>
           </div>
           <div>
             <a href="https://tfletch.tech"> tfletch.tech </a>

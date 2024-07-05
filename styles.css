@@ -16,6 +16,7 @@ a:focus-visible, a:hover {
 
 a:focus-visible {
   outline: 2px solid var(--emphasis-prose-color);
+  outline-offset: 1px;
 }
 
 /* Theme variables */
@@ -55,6 +56,8 @@ a {
   text-decoration-color: var(--emphasis-prose-color);
   text-decoration-thickness: .125em;
   text-underline-offset: 2px;
+
+  height: 1lh;
 }
 
 pre {
