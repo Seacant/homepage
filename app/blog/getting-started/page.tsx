@@ -8,6 +8,7 @@ import { Article as Styled } from "@components/Article";
 import { Code } from "@components/Code";
 
 import fullWidthStyles from "@components/FullWidth.module.css";
+import { LocalDate } from "@components/LocalDate";
 
 const Article = () => (
   <>
@@ -17,6 +18,18 @@ const Article = () => (
     <Styled>
       <h1> Learning to &lt;code/&gt; </h1>
       <ArticleInfo date={new Date(Date.UTC(2022, 9, 31, 20, 54, 54))} />
+
+      <section>
+        <hr />
+        <p>
+          <LocalDate date={new Date(Date.UTC(2024, 9, 24, 20, 54, 54))} />{" "}
+          update: I've since moved to using{" "}
+          <Link href="https://bright.codehike.org">Bright</Link> for my syntax
+          highlighting for its support of React Server Component-based
+          rendering. The rest of this article is still relevant.
+        </p>
+        <hr />
+      </section>
 
       <p>
         This is a coding blog, so it makes sense to start out by making sure we
