@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styles from "./Article.module.css";
 
-export const Article = styled.article`
-  text-align: justify;
-  display: contents;
-
-  & > * {
-    grid-column: 2;
-  }
-`;
+type ArticleProps = React.ComponentProps<"article"> & {
+  children: React.ReactNode;
+};
+export const Article = ({ children, ...props }: ArticleProps) => (
+  <article {...props} className={[styles.article, props.className].join(" ")}>
+    {children}
+  </article>
+);

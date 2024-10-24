@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+"use client";
+import { useEffect, useRef } from "react";
 
 type LocalDateProps = {
   date: Date;

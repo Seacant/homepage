@@ -9,12 +9,11 @@
   },
   "dependencies": {
     "common-tags": "^1.8.2",
-    "next": "rc",
-    "react": "rc",
-    "react-dom": "rc",
-    "react-syntax-highlighter": "^15.5.0",
-    "sharp": "^0.31.1",
-    "styled-components": "^6.1.11"
+    "next": "15.0.0-rc.1",
+    "react": "19.0.0-rc-1631855f-20241023",
+    "react-dom": "19.0.0-rc-1631855f-20241023",
+    "react-syntax-highlighter": "^15.6.1",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/common-tags": "^1.8.4",

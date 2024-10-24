@@ -1,9 +1,10 @@
-import styled from "styled-components";
+"use client";
+import React from "react";
+import styles from "./Button.module.css";
 
-export const Button = styled.button`
-  padding: 1ch;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0 0 0 1px var(--main-prose-color);
-  color: inherit;
-`;
+type ButtonProps = React.ComponentProps<"button">;
+export const Button: React.FC<ButtonProps> = (props) => (
+  <button {...props} className={[styles.button, props.className].join(" ")}>
+    {props.children}
+  </button>
+);

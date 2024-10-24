@@ -1,9 +1,6 @@
-import styled from "styled-components";
+import styles from "./FullWidth.module.css";
 
-export const FullWidth = styled.div`
-  width: 100%;
-  grid-column: 1 / -1;
-
-  display: flex;
-  justify-content: center;
-`;
+type Props = React.ComponentProps<"div">;
+export const FullWidth = (props: Props) => (
+  <div {...props} className={[styles.full_bleed, props.className].join(" ")} />
+);

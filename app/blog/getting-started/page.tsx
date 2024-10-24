@@ -1,17 +1,26 @@
+"use client";
+import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-// import styles from './blog.module.css'
 import { stripIndent, html } from "common-tags";
 
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { ArticleInfo } from "../../components/ArticleInfo";
-import styled from "styled-components";
-import { Article as Styled } from "../../components/Article";
-import { FullWidth } from "../../components/FullWidth";
+import { ArticleInfo } from "../../../components/ArticleInfo";
+import { Article as Styled } from "../../../components/Article";
 
-const FullWidthSyntaxHighlighter = styled(FullWidth).attrs({
-  as: SyntaxHighlighter,
-})``;
+import fullWidthStyles from "../../../components/FullWidth.module.css";
+
+type FullWidthSyntaxHighlighterProps = {
+  children: React.ReactNode;
+} & React.ComponentProps<typeof SyntaxHighlighter>;
+const FullWidthSyntaxHighlighter = ({
+  children,
+  ...props
+}: FullWidthSyntaxHighlighterProps) => (
+  <SyntaxHighlighter {...props} className={fullWidthStyles["full-width"]}>
+    {children}
+  </SyntaxHighlighter>
+);
 
 const Article = () => (
   <>

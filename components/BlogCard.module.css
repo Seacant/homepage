@@ -1,0 +1,10 @@
+.blog-card {
+  padding: 2ch;
+
+  & > h2 {
+    margin: 0;
+  }
+  & > p {
+    padding-left: 2ch;
+  }
+}

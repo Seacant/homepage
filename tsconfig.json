@@ -17,12 +17,20 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
+    "components/**/*.tsx",
     "next-env.d.ts",
     "pages/**/*.tsx",
-    "components/**/*.tsx"
+    "apps/**/*.tsx",
+    ".next/types/**/*.ts",
+    "types.d.ts"
   ],
   "exclude": [
     "node_modules"
