@@ -72,8 +72,7 @@ svg {
   color: var(--main-prose-color);
 }
 
-/* The main 'app' from Nextjs */
-body > div {
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
