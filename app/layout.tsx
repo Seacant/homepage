@@ -2,7 +2,6 @@ import React from "react";
 import { Header } from "../components/Header";
 
 import "../styles.css";
-import "../highlight.css";
 
 import { Inconsolata } from "next/font/google";
 import { Metadata } from "next";

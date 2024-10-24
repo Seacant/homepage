@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 
 import Head from "next/head";
 import Link from "next/link";
 
-import profilePic from "../public/me.png";
-import { Avatar } from "../components/Avatar";
+import profilePic from "@public/me.png";
+import { Avatar } from "@components/Avatar";
 
 type proseLinkProps = {
   href: string;

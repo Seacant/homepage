@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Card } from "../../components/BlogCard";
+import { Card } from "@components/BlogCard";
 
 import { blogData } from "../../data/blogs.json";
 import React from "react";

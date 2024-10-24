@@ -22,14 +22,18 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@public/*": ["public/*"],
+    }
   },
   "include": [
-    "components/**/*.tsx",
-    "next-env.d.ts",
-    "pages/**/*.tsx",
     "apps/**/*.tsx",
+    "components/**/*.tsx",
     ".next/types/**/*.ts",
+    "next-env.d.ts",
     "types.d.ts"
   ],
   "exclude": [

@@ -1,26 +1,13 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { stripIndent, html } from "common-tags";
 
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { ArticleInfo } from "../../../components/ArticleInfo";
-import { Article as Styled } from "../../../components/Article";
+import { ArticleInfo } from "@components/ArticleInfo";
+import { Article as Styled } from "@components/Article";
+import { Code } from "@components/Code";
 
-import fullWidthStyles from "../../../components/FullWidth.module.css";
-
-type FullWidthSyntaxHighlighterProps = {
-  children: React.ReactNode;
-} & React.ComponentProps<typeof SyntaxHighlighter>;
-const FullWidthSyntaxHighlighter = ({
-  children,
-  ...props
-}: FullWidthSyntaxHighlighterProps) => (
-  <SyntaxHighlighter {...props} className={fullWidthStyles["full-width"]}>
-    {children}
-  </SyntaxHighlighter>
-);
+import fullWidthStyles from "@components/FullWidth.module.css";
 
 const Article = () => (
   <>
@@ -87,10 +74,10 @@ const Article = () => (
       <pre>
         <code>{html`
           <pre>
-          <code>{ html\`
-            ...
-          \`}</code>
-        </pre>
+            <code>{ html\`
+              ...
+            \`}</code>
+          </pre>
         `}</code>
       </pre>
 
@@ -116,37 +103,31 @@ const Article = () => (
         progressively highlighting if the client has JS enabled.
       </p>
 
-      <SyntaxHighlighter
-        language="javascript"
-        useInlineStyles={false}
-      >{stripIndent`
+      <Code lang="js">{stripIndent`
         if ( window.navigator ) {
           console.log("Hello, user!")
         } else {
           console.error("There's nobody to read me :(")
         }
-    `}</SyntaxHighlighter>
+      `}</Code>
 
       <p>Not bad! In JSX, the above looks like</p>
 
-      <SyntaxHighlighter
-        language="javascript"
-        useInlineStyles={false}
-      >{stripIndent`
-      /* Contains our 2 styles behind a @media prefers-color-scheme selector */
-      import '../highlight.css'
+      <Code lang="js">{stripIndent`
+        /* Contains our 2 styles behind a @media prefers-color-scheme selector *\/
+        import '../highlight.css'
 
-      // Then, anywhere
-      import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+        // Then, anywhere
+        import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
-      <SyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent\`
-          if ( window.navigator ) {
-            console.log("Hello, user!")
-          } else {
-            console.error("There's nobody to read me :(")
-          }
-      \`}</SyntaxHighlighter>
-    `}</SyntaxHighlighter>
+        <SyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent\`
+            if ( window.navigator ) {
+              console.log("Hello, user!")
+            } else {
+              console.error("There's nobody to read me :(")
+            }
+        \`}</SyntaxHighlighter>
+      `}</Code>
 
       <p>
         Both of which render from the server as completely valid{" "}
@@ -162,31 +143,25 @@ const Article = () => (
         akin to 'full-bleed' working.
       </p>
 
-      <FullWidthSyntaxHighlighter
-        language="javascript"
-        useInlineStyles={false}
-      >{stripIndent`
-      import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+      <Code lang="js" className={fullWidthStyles["full-width"]}>{stripIndent`
+        import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
-      <SyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent\`
-          if ( window.navigator ) {
-            console.log("Hello, user!")
-          } else {
-            console.error("There's nobody to read me :(")
-          }
-      \`}</SyntaxHighlighter>
-    `}</FullWidthSyntaxHighlighter>
+        <SyntaxHighlighter language="javascript" useInlineStyles={false}>{ stripIndent\`
+            if ( window.navigator ) {
+              console.log("Hello, user!")
+            } else {
+              console.error("There's nobody to read me :(")
+            }
+        \`}</SyntaxHighlighter>
+      `}</Code>
 
       <p>
         And, just to test, if our content is <em>really</em> long...
       </p>
 
-      <FullWidthSyntaxHighlighter
-        language="javascript"
-        useInlineStyles={false}
-      >{stripIndent`
-    if(you_use_really_long_variable_names_and_hate_newlines_because_youre_a_l33t_hacker_man){console.log("what a cool guy")}
-    `}</FullWidthSyntaxHighlighter>
+      <Code lang="js" className={fullWidthStyles["full-width"]}>{stripIndent`
+      if(you_use_really_long_variable_names_and_hate_newlines_because_youre_a_l33t_hacker_man){console.log("what a cool guy")}
+      `}</Code>
 
       <p>
         This all works because of the amazing CSS Grid, which is nice enough to
@@ -194,37 +169,37 @@ const Article = () => (
         entirety, the code that allows all of this to work is as follows
       </p>
 
-      <SyntaxHighlighter language="css" useInlineStyles={false}>{stripIndent`
-      // styles.css
-      main {
-        display: grid;
-        grid-template-columns:
-          1fr
-          min(65ch, 100%)
-          1fr;
-      }
+      <Code lang="css">{stripIndent`
+        /* styles.css */
+        main {
+          display: grid;
+          grid-template-columns:
+            1fr
+            min(65ch, 100%)
+            1fr;
+        }
 
-      main > * {
-        grid-column: 2;
-      }
+        main > * {
+          grid-column: 2;
+        }
 
-      // blog.module.css
-      .article {
-        text-align: justify;
-        display: contents;
-      }
-      .article > * {
-        grid-column: 2;
-      }
+        /* blog.module.css */
+        .article {
+          text-align: justify;
+          display: contents;
+        }
+        .article > * {
+          grid-column: 2;
+        }
 
-      .full_bleed {
-        width: 100%;
-        grid-column: 1 / -1;
+        .full_bleed {
+          width: 100%;
+          grid-column: 1 / -1;
 
-        display: flex;
-        justify-content: center;
-      }
-    `}</SyntaxHighlighter>
+          display: flex;
+          justify-content: center;
+        }
+      `}</Code>
 
       <p>
         This is almost entirely inspired by{" "}

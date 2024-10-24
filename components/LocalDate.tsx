@@ -14,7 +14,7 @@ export const LocalDate = ({ date, localeOptions }: LocalDateProps) => {
   });
 
   // handle locale changes once we get to the client
-  let localDateString = useRef(locale.format(date));
+  const localDateString = useRef(locale.format(date));
   useEffect(() => {
     localDateString.current = locale.format(date);
   }, [locale, date]);
