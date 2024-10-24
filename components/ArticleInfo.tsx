@@ -19,8 +19,7 @@ export const ArticleInfo = ({ date }: ArticleInfoProps) => {
         alt="Picture of the author"
       />
       <address> By Travis Fletcher </address>
-      on
-      <LocalDate date={date} />
+      on <LocalDate date={date} />
     </div>
   );
 };

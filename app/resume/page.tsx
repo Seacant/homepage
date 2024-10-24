@@ -4,6 +4,10 @@ import Head from "next/head";
 import { PrintButton } from "./PrintButton";
 
 import styles from "./page.module.css";
+import { Inconsolata } from "next/font/google";
+
+// if you need this font elsewhere, please move this to a shared location
+const monospace = Inconsolata({ subsets: ["latin"], variable: "--mono-font" });
 
 const Resume: React.FC = () => (
   <>
@@ -11,7 +15,7 @@ const Resume: React.FC = () => (
       <title>Travis' Resume</title>
     </Head>
     <PrintButton />
-    <article className={styles["retro-letter"]}>
+    <article className={[styles["retro-letter"], monospace.variable].join(" ")}>
       <section className={styles["introduction"]}>
         <div>
           <h2 className={styles["header"]}> Travis Fletcher </h2>

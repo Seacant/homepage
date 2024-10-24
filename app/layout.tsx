@@ -3,10 +3,7 @@ import { Header } from "../components/Header";
 
 import "../styles.css";
 
-import { Inconsolata } from "next/font/google";
 import { Metadata } from "next";
-
-const monospace = Inconsolata({ subsets: ["latin"], variable: "--mono-font" });
 
 export const metadata: Metadata = {
   authors: [
@@ -14,20 +11,18 @@ export const metadata: Metadata = {
       name: "Travis Fletcher",
     },
   ],
-  description: "Personal Homepage for Travis. Currently under construction",
+  title: "Travis Fletcher",
+  description: "Personal Homepage for Travis.",
 };
 
 type Props = { children?: React.ReactNode };
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html>
+    <html lang="en">
       <body>
-        {/* todo: remove this wrapper div */}
-        <div>
-          <Header />
-          <main className={monospace.variable}>{children}</main>
-          <footer>Made with ❤️ by Travis Fletcher</footer>
-        </div>
+        <Header />
+        <main>{children}</main>
+        <footer>Made with ❤️ by Travis Fletcher</footer>
       </body>
     </html>
   );

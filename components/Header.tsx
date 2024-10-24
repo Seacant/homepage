@@ -37,7 +37,7 @@ export const Header = () => {
           ["/resume", "Résumé"],
         ].map(([path, name]) => (
           <NavLink href={path} key={path}>
-            {pathname === path ? <h1>{name}</h1> : name}
+            {pathname === path ? <h1>{name}</h1> : name}{" "}
           </NavLink>
         ))}
       </nav>
