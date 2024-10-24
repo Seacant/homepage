@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 /* Add a better focus indicator to everything */
 @media not (prefers-reduced-motion) {
   a {
@@ -12,6 +16,7 @@ a:focus-visible, a:hover {
 
 a:focus-visible {
   outline: 2px solid var(--emphasis-prose-color);
+  outline-offset: 1px;
 }
 
 /* Theme variables */
@@ -21,11 +26,13 @@ a:focus-visible {
   font-family: Helvetica;
 
   color-scheme: light dark;
+	scrollbar-gutter: both-edges stable;
 
   --main-prose-color: #333;
-  --alt-prose-color: #d4d0c940;
+  --alt-prose-color: #d4d0c9;
   --link-prose-color: #5a1515;
   --emphasis-prose-color: #971a1a;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +56,8 @@ a {
   text-decoration-color: var(--emphasis-prose-color);
   text-decoration-thickness: .125em;
   text-underline-offset: 2px;
+
+  height: 1lh;
 }
 
 pre {

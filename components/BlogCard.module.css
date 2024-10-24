@@ -1,13 +1,10 @@
-.blog_card {
-  border: 1px solid var(--main-prose-color);
-  border-radius: 0 16px;
-  padding: 2ch 2ch 0 2ch;
-}
+.blog-card {
+  padding: 2ch;
 
-.blog_card > h2 {
-  margin: 0;
-}
-
-.blog_card > p {
-  padding-left: 2em;
+  & > h2 {
+    margin: 0;
+  }
+  & > p {
+    padding-left: 2ch;
+  }
 }

@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next",
     "lint": "next lint",
@@ -7,24 +8,26 @@
     "start": "next build && next start"
   },
   "dependencies": {
-    "@next/font": "^13.0.6",
+    "bright": "^0.8.5",
     "common-tags": "^1.8.2",
-    "next": "^13.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "sharp": "^0.31.1"
+    "next": "15.0.0-rc.1",
+    "react": "19.0.0-rc-1631855f-20241023",
+    "react-dom": "19.0.0-rc-1631855f-20241023",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@types/common-tags": "^1.8.1",
-    "@types/node": "^18.11.12",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "@types/react-syntax-highlighter": "^15.5.5",
-    "eslint": "^8.29.0",
-    "eslint-config-next": "^13.0.6",
-    "typescript": "^4.9.4",
-    "vercel": "^28.4.12"
+    "@types/common-tags": "^1.8.4",
+    "@types/node": "^20.14.9",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^15.0.1",
+    "typescript": "^5.6.3",
+    "vercel": "^34.3.0"
   },
-  "packageManager": "yarn@3.3.0"
+  "resolutions": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  },
+  "packageManager": "yarn@4.5.1"
 }

@@ -1,21 +1,20 @@
-import Link from 'next/link'
-import styles from './BlogCard.module.css'
+import Link from "next/link";
+import styled from "./BlogCard.module.css";
 
 type CardProps = {
   uri: string;
   title: string;
   description: string;
-}
-export const Card = ({uri, title, description}: CardProps) => 
-  <article key={title} className={styles.blog_card}>
-    <h2> 
-      <Link href={`blog/${uri}`}>
-        {title}
-      </Link>
-    </h2>
-    <p>
-      {description}
-    </p>
-  </article>
+  key: React.Key;
+};
 
-export default Card
+export const Card = ({ uri, title, description, key }: CardProps) => (
+  <div className={styled["blog-card"]} key={key}>
+    <h2>
+      <Link href={`blog/${uri}`}>{title}</Link>
+    </h2>
+    <p>{description}</p>
+  </div>
+);
+
+export default Card;

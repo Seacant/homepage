@@ -1,0 +1,85 @@
+.retro-letter {
+  @media print {
+    margin-left: -0.25in;
+    font-size: 14px;
+    line-height: 14px;
+    color: black;
+
+    & a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  /* since we are taking away the normal site gutters, add back 
+   * something reminiscent of real paper margins
+  */
+  @media (max-width: 8.5in) {
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+  }
+
+  max-width: 7.5in;
+  display: flex;
+  flex-direction: column;
+  grid-column: -1 / 1;
+  gap: 1ch;
+  margin: auto;
+
+  font-family: var(--mono-font);
+  line-height: 1.2em;
+  font-weight: 500;
+
+  & ul {
+    margin: 0.25em;
+  }
+}
+
+.generic-section {
+  display: contents;
+  break-before: auto;
+  break-inside: avoid;
+}
+
+.year {
+  float: right;
+
+  /* 20xx-20xx is 9 characters */
+  width: 9ch;
+}
+
+.year--single {
+  width: 5ch;
+}
+
+.section-prose {
+  margin-left: 2ch;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & > .year {
+    margin-left: auto;
+  }
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info {
+  text-align: right;
+
+  /* leave some room for focus outline */
+  & > div {
+    padding-block: 2px;
+  }
+}
+
+.header {
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1em;
+}

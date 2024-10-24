@@ -1,0 +1,13 @@
+.article-info {
+  display: flex;
+  gap: 1ch;
+  line-height: 32px;
+  & > address {
+    display: inline;
+  }
+}
+
+.avatar {
+  vertical-align: bottom;
+  border-radius: 16px;
+}
