@@ -65,7 +65,7 @@ pre {
 }
 
 code {
-  font-family: var(--mono-font), monospace;
+  font-family: monospace;
 }
 
 svg {
