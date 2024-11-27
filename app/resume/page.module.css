@@ -1,6 +1,21 @@
 .retro-letter {
+  max-width: 7.5in;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  grid-column: var(--column-full);
+  gap: 1ch;
+
+  font-family: var(--mono-font);
+  line-height: 1.2em;
+  font-weight: 500;
+
+  & ul {
+    margin: 0.25em;
+  }
+
   @media print {
-    margin-left: -0.25in;
     font-size: 14px;
     line-height: 14px;
     color: black;
@@ -9,29 +24,10 @@
       text-decoration: none;
       color: black;
     }
-  }
 
-  /* since we are taking away the normal site gutters, add back 
-   * something reminiscent of real paper margins
-  */
-  @media (max-width: 8.5in) {
-    margin-left: 0.5in;
-    margin-right: 0.5in;
-  }
-
-  max-width: 7.5in;
-  display: flex;
-  flex-direction: column;
-  grid-column: -1 / 1;
-  gap: 1ch;
-  margin: auto;
-
-  font-family: var(--mono-font);
-  line-height: 1.2em;
-  font-weight: 500;
-
-  & ul {
-    margin: 0.25em;
+    /* The default browser print adds its own margins, so turn ours off. */
+    width: 8.5in;
+    margin: 0;
   }
 }
 
@@ -49,6 +45,7 @@
 }
 
 .year--single {
+  float: right;
   width: 5ch;
 }
 

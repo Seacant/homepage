@@ -187,27 +187,41 @@ const Article = () => (
         main {
           display: grid;
           grid-template-columns:
+            1ch
             1fr
-            min(65ch, 100%)
-            1fr;
+            min(65ch, calc(100% - 2ch))
+            1fr
+            1ch
+          ;
+
+          --column-content: 3;
+          --column-full: 2 / -2;
         }
 
         main > * {
-          grid-column: 2;
+          grid-column: var(--column-content);
         }
 
         /* blog.module.css */
         .article {
-          text-align: justify;
-          display: contents;
-        }
-        .article > * {
-          grid-column: 2;
+          display: grid;
+          grid-template-columns: subgrid;
+
+          /* set OURSELVES to capture the soft-gutter */
+          grid-column: var(--column-full);
+
+          & > * {
+            /* Tell OUR children to default to the new content column */
+            --column-content: 2;
+            --column-full: 1 / -1;
+
+            grid-column: var(--column-content);
+          }
         }
 
         .full_bleed {
           width: 100%;
-          grid-column: 1 / -1;
+          grid-column: var(--column-full);
 
           display: flex;
           justify-content: center;
@@ -222,9 +236,9 @@ const Article = () => (
         with the tricky bit being that we want to declare our layout at the{" "}
         <code>main</code> tag but our semantic HTML-ness means we are surrounded
         by an <code>article</code> before we get to the actual content. By
-        declaring the article as <code>display: contents</code>, we are able to
-        hide the article tag from the DOM and promote its children to be in the
-        grid instead.
+        declaring the <code>article</code> as a <code>subgrid</code> spanning 
+        the whole workable area, we are able to inherit the layout from main 
+        while still allowing our own content to expand into the soft gutter.
       </p>
     </Styled>
   </>

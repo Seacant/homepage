@@ -1,8 +1,16 @@
 .article {
   text-align: justify;
-  display: contents;
-  
+
+  display: grid;
+  grid-template-columns: subgrid;
+
+  /* set OURSELVES to capture the soft-gutter */
+  grid-column: var(--column-full);
+
   & > * {
-    grid-column: 2;
+    /* Tell OUR children to default to the content column */
+    --column-content: 2;
+    --column-full: 1 / -1;
+    grid-column: var(--column-content);
   }
 }

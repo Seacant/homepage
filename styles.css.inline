@@ -10,6 +10,10 @@
   }
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 a:focus-visible, a:hover {
   text-decoration-color: #00000000;
 }
@@ -92,10 +96,14 @@ header {
   header, footer {
     visibility: hidden;
   }
+  nextjs-portal {
+    visibility: hidden;
+  }
 }
 
 header h1 {
   font-size: inherit;
+  font-weight: normal;
   margin: 0;
 }
 
@@ -108,15 +116,21 @@ header > nav, header > address {
 
 main {
   flex-grow: 1;
+  align-content: start;
 
   display: grid;
-  align-content: start;
   grid-template-columns:
-    minmax(1ch, 1fr)
+    1ch
+    1fr
     min(65ch, calc(100% - 2ch))
-    minmax(1ch, 1fr);
+    1fr
+    1ch
+  ;
+
+  --column-content: 3;
+  --column-full: 2 / -2;
 }
 
 main > * {
-  grid-column: 2;
+  grid-column: var(--column-content);
 }
