@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import profilePic from "@public/me.png";
+---
+
+<Layout title="Travis' Homepage">
+  <Image
+    class="avatar"
+    src={profilePic}
+    height="128"
+    width="128"
+    alt="Picture of the author"
+  />
+
+  <section>
+    <h2>Intro</h2>
+    <p>
+      Welcome! My name is Fletch, and I am a Software Engineer working in
+      Ed-Tech. I'm not currently looking for work, but feel free to check out my <a
+        href="/resume">Résumé</a
+      > or even reach out (top right) if you think you can convince me otherwise.
+    </p>
+  </section>
+
+  <section>
+    <h2>Active Projects</h2>
+    <ul>
+      <li>
+        <h3>My Homepage</h3>
+        <p>
+          The site you're reading right now has serves a dual purpose as my
+          place for experimenting with new web technologies. It has been written
+          and re-written in every hot tech JavaScript Framework I had time to
+          look at. Check out its current iteration on
+          <a href="https://github.com/Seacant/homepage">GitHub</a>.
+        </p>
+      </li>
+      <li>
+        <h3>Blueprints</h3>
+        <p>
+          Create and share your Minecraft creations and contraptions through the
+          use of its built-in Schematic (.nbt) files! Browse popular creators
+          and download tutorial builds without having to pull their entire world
+          with it.
+        </p>
+        <p>(Coming soon™)</p>
+      </li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .avatar {
+    display: block;
+    margin: auto;
+
+    border-radius: 64px;
+  }
+</style>

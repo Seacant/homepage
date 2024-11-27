@@ -1,7 +1,0 @@
-.full-width.full-width {
-  width: 100%;
-  grid-column: var(--column-full);
-
-  display: flex;
-  justify-content: center;
-}

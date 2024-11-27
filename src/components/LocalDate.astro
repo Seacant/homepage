@@ -1,0 +1,13 @@
+---
+const { date } = Astro.props;
+
+const locale = Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<time datetime={date.toISOString()}>
+  {locale.format(date)}
+</time>

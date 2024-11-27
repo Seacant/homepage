@@ -1,0 +1,39 @@
+---
+import type { AstroInstance } from "astro";
+import Layout from "@layouts/Layout.astro";
+
+type BlogData = AstroInstance &
+  Partial<{
+    title: string;
+    description: string;
+  }>;
+
+const posts = await Astro.glob<BlogData>("./posts/*.astro");
+---
+
+<Layout title="Blog Index">
+  {
+    posts.slice(0, 3).map((post) => (
+      <article>
+        <h2>
+          {" "}
+          <a href={post.url}>{post.title}</a>{" "}
+        </h2>
+        <p>{post.description}</p>
+      </article>
+    ))
+  }
+</Layout>
+
+<style>
+  article {
+    padding: 2ch;
+
+    & > h2 {
+      margin: 0;
+    }
+    & > p {
+      padding-left: 2ch;
+    }
+  }
+</style>

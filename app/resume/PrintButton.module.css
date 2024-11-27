@@ -1,8 +1,0 @@
-.pdf-button {
-  margin: auto;
-  margin-bottom: 1ch;
-
-  @media print {
-    display: none;
-  }
-}
