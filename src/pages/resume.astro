@@ -1,0 +1,266 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Resume">
+  <article>
+    <section class="introduction">
+      <div>
+        <h2>Travis Fletcher</h2>
+
+        <span> Full Stack Senior Software Engineer </span>
+      </div>
+      <address>
+        <div>
+          <a href="https://github.com/Seacant"> GitHub @ Seacant </a>
+        </div>
+        <div>
+          <a href="https://tfletch.tech"> tfletch.tech </a>
+        </div>
+        <div>
+          <a href="mailto:contact@tfletch.tech"> contact@tfletch.tech </a>
+        </div>
+      </address>
+    </section>
+    <section>
+      <h2>Technical Skills</h2>
+      <div>
+        Languages:
+        <div class="section-prose">
+          Typescript, Ruby, HTML/CSS, Perl, SQL, Rust
+        </div>
+      </div>
+      <div>
+        Technologies:
+        <div class="section-prose">React, Ruby on Rails, Terraform, AWS</div>
+      </div>
+      <div>
+        Techniques:
+        <div class="section-prose">
+          Domain-Driven Design, Functional Programming, Test-Driven Development
+        </div>
+      </div>
+      <div>
+        Specialties:
+        <div class="section-prose">
+          Software/Feature Architecture, Performance & Scalability,
+          Accessibility, Machine Learning
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <div>
+        Loveland High School
+        <span class="year">2014-2017</span>
+      </div>
+
+      <div>
+        Northern Kentucky University
+        <span class="year">2017-2021</span>
+        <div class="section-prose">Data Science Major & Management Minor</div>
+      </div>
+    </section>
+    <section>
+      <h2>Employment</h2>
+      <div>
+        ExamSpark
+        <div class="section-prose">
+          Senior Software Engineer
+          <span class="year">2023-</span>
+        </div>
+        <ul>
+          <li>
+            Developed in cutting-edge cloud-native AWS Amplify environment via
+            full-stack Typescript
+          </li>
+        </ul>
+      </div>
+      <div>
+        Instructure
+        <div class="section-prose">
+          Senior Software Engineer
+          <span class="year">2022-2023</span>
+        </div>
+        <div class="section-prose">
+          Software Engineer
+          <span class="year">2021-2022</span>
+        </div>
+        <ul>
+          <li>
+            Maintained and scaled Ruby on Rails app with 10000+ Rps across 500+
+            servers
+          </li>
+          <li>
+            Worked extensively with Product to plan projects that solved
+            customer needs
+          </li>
+          <li>
+            Led technical discussions during Software Architecture Planning
+          </li>
+          <li>Championed accessible web design during front-end discussions</li>
+        </ul>
+      </div>
+      <div>
+        Certica Solutions
+        <div class="section-prose">
+          Software Engineer
+          <span class="year">2019-2021</span>
+        </div>
+        <div class="section-prose">
+          Junior Software Engineer
+          <span class="year">2015-2019</span>
+        </div>
+        <ul>
+          <li>
+            Provide front-end website and database support to both internal and
+            external clients
+          </li>
+          <li>Develop unit tests for legacy monolithic codebase</li>
+          <li>
+            Maintain a RESTful JSON API with a full regression testing suite
+          </li>
+          <li>Use domain-driven design to retrofit OOP to codebase</li>
+        </ul>
+      </div>
+      <div>
+        Northern Kentucky University
+        <div class="section-prose">
+          Research Assistant
+          <span class="year">2018-2019</span>
+        </div>
+        <ul>
+          <li>
+            Developed an Internet of Things security management solution, Java
+            Experience
+          </li>
+          <li>Presented findings at NKU Celebration of Student Research</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <div>
+        FTC Robotics
+        <span class="year">2015-2017</span>
+        <div class="section-prose">Lead Programmer</div>
+        <div class="section-prose">
+          Java, Android Studio, Github, Gradle, and Vim
+        </div>
+        <div class="section-prose">
+          Created a robot using Java to compete in predetermined challenges
+        </div>
+      </div>
+      <div>
+        UC IT Expo
+        <span class="year year--single">2016</span>
+        <div class="section-prose">
+          Lead Programmer; 1st place (High School category)
+        </div>
+        <div class="section-prose">
+          Developed a low-cost camera mount to follow a lecturer during class
+        </div>
+      </div>
+      <div>
+        RevolutionUC
+        <span class="year year--single">2017</span>
+        <div class="section-prose">24-hour hackathon</div>
+        <div class="section-prose">
+          V-Arrrgh - Virtual Reality therapy program for Amblyopia, C#; 1st
+          place
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+<style>
+  @font-face {
+    font-family: "Inconsolata";
+    src: url("/fonts/inconsolata.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  article {
+    max-width: 7.5in;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    grid-column: var(--column-full);
+    gap: 1ch;
+
+    font-family: Inconsolata, monospace;
+    line-height: 1.2em;
+    font-weight: 500;
+
+    & ul {
+      margin: 0.25em;
+    }
+
+    @media print {
+      font-size: 14px;
+      line-height: 14px;
+      color: black;
+
+      & a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* The default browser print adds its own margins, so turn ours off. */
+      width: 8.5in;
+      margin: 0;
+    }
+  }
+
+  section {
+    display: contents;
+    break-before: auto;
+    break-inside: avoid;
+  }
+
+  .year {
+    float: right;
+
+    /* 20xx-20xx is 9 characters */
+    width: 9ch;
+  }
+
+  .year--single {
+    width: 5ch;
+  }
+
+  .section-prose {
+    margin-left: 2ch;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > .year {
+      margin-left: auto;
+    }
+  }
+
+  .introduction {
+    display: flex;
+    justify-content: space-between;
+
+    & > address {
+      text-align: right;
+
+      /* leave some room for focus outline */
+      & > div {
+        padding-block: 2px;
+      }
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1em;
+  }
+</style>
