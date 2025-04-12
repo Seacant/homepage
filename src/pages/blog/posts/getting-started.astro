@@ -13,11 +13,23 @@ export const description = `
   pretty fun to play around with. Let's get our toes wet by taking a
   look at the cool CSS we can use to spice up our blog posts.
 `;
+export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 ---
+
+<style>
+  /* 
+    the examples I gave from before the full-width technique
+    were causing the grid to break due to a leaking width:fit-content
+    from the astro-code code styles 
+  */
+  .fix-non-full-width-layout-break {
+    width: 100%;
+  }
+</style>
 
 <Layout title="Learning to <code />">
   <h1>Learning to &lt;code/&gt;</h1>
-  <ArticleInfo date={new Date(Date.UTC(2022, 9, 31, 20, 54, 54))} />
+  <ArticleInfo date={date} />
 
   <section>
     <hr />
@@ -117,6 +129,7 @@ export const description = `
 
   <Code
     lang="js"
+    class="fix-non-full-width-layout-break"
     code={stripIndent`
     if ( window.navigator ) {
       console.log("Hello, user!")
@@ -130,6 +143,7 @@ export const description = `
 
   <Code
     lang="js"
+    class="fix-non-full-width-layout-break"
     code={stripIndent`
     /* Contains our 2 styles behind a @media prefers-color-scheme selector *\/
     import '../highlight.css'

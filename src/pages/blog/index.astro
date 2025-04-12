@@ -6,17 +6,30 @@ type BlogData = AstroInstance &
   Partial<{
     title: string;
     description: string;
+    date: Date;
   }>;
 
-const posts = await Astro.glob<BlogData>("./posts/*.astro");
+// Find all the blogposts in the /posts/ folder, pick the last 3, import them,
+// and pull summary info for display
+const posts = await Promise.all(
+  Object.values(import.meta.glob<BlogData>("./posts/*.astro")).map((f) => f())
+).then((posts) =>
+  posts
+    .filter((post) => post.date)
+    .sort((a, b) => {
+      const aTime = a.date?.getTime() ?? 0;
+      const bTime = b.date?.getTime() ?? 0;
+      return bTime - aTime;
+    })
+    .slice(0, 3)
+);
 ---
 
 <Layout title="Blog Index">
   {
-    posts.slice(0, 3).map((post) => (
+    posts.map((post) => (
       <article>
         <h2>
-          {" "}
           <a href={post.url}>{post.title}</a>{" "}
         </h2>
         <p>{post.description}</p>

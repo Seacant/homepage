@@ -58,7 +58,7 @@ const { title } = Astro.props;
   /* Add a better focus indicator to everything */
   @media not (prefers-reduced-motion) {
     a {
-      outline-color: var(--alt-prose-color);
+      outline-color: var(--layout-background-color);
       transition:
         text-decoration 250ms,
         outline-color 250ms;
@@ -75,31 +75,31 @@ const { title } = Astro.props;
   }
 
   a:focus-visible {
-    outline: 2px solid var(--emphasis-prose-color);
+    outline: 2px solid var(--secondary-link-color);
     outline-offset: 1px;
   }
 
   /* Theme variables */
   :root {
     font-size: 18px;
-    line-height: 1.5em;
+    line-height: 1.5;
     font-family: Helvetica;
 
     color-scheme: light dark;
     scrollbar-gutter: both-edges stable;
 
-    --main-prose-color: #333;
-    --alt-prose-color: #d4d0c9;
-    --link-prose-color: #5a1515;
-    --emphasis-prose-color: #971a1a;
+    --layout-background-color: #d4d0c9;
+    --primary-text-color: #333;
+    --primary-link-color: #5a1515;
+    --secondary-link-color: #971a1a;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --main-prose-color: #c7beb4;
-      --alt-prose-color: #151316;
-      --link-prose-color: #d58080;
-      --emphasis-prose-color: #dd3a31;
+      --primary-text-color: #c7beb4;
+      --layout-background-color: #151316;
+      --primary-link-color: #d58080;
+      --secondary-link-color: #dd3a31;
     }
   }
 
@@ -107,13 +107,13 @@ const { title } = Astro.props;
   body {
     margin: 0px;
     min-height: 100vh;
-    background-color: var(--alt-prose-color);
-    color: var(--main-prose-color);
+    background-color: var(--layout-background-color);
+    color: var(--primary-text-color);
   }
 
   a {
-    color: var(--link-prose-color);
-    text-decoration-color: var(--emphasis-prose-color);
+    color: var(--primary-link-color);
+    text-decoration-color: var(--secondary-link-color);
     text-decoration-thickness: 0.125em;
     text-underline-offset: 2px;
 
@@ -129,7 +129,7 @@ const { title } = Astro.props;
   }
 
   svg {
-    color: var(--main-prose-color);
+    color: var(--primary-text-color);
   }
 
   body {
@@ -139,6 +139,15 @@ const { title } = Astro.props;
     align-items: center;
 
     gap: 1ch;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.25;
   }
 
   header {
@@ -153,15 +162,6 @@ const { title } = Astro.props;
     footer {
       visibility: hidden;
     }
-    nextjs-portal {
-      visibility: hidden;
-    }
-  }
-
-  header h1 {
-    font-size: inherit;
-    font-weight: normal;
-    margin: 0;
   }
 
   header > nav,
