@@ -13,13 +13,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "astro": "^5.4.2",
+    "astro": "^5.7.10",
     "common-tags": "^1.8.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@types/common-tags": "^1.8.4",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
-  "packageManager": "yarn@4.7.0"
+  "packageManager": "yarn@4.9.1"
 }
