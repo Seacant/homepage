@@ -1,0 +1,136 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import LocalDate from "@components/LocalDate.astro";
+import ArticleInfo from "@components/ArticleInfo.astro";
+import Code from "@components/Code.astro";
+
+import { html, stripIndent } from "common-tags";
+
+export const title = "Fancy Inline Asides";
+export const description = `
+  todo
+`;
+export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
+---
+
+<Layout title="Inline Asides">
+  <h1>Fancy Inline Asides</h1>
+  <ArticleInfo date={date} />
+
+  <p>
+    I recently read an article on
+    <a href="https://thirty-five.com/">Thirty-Five</a> about... something, and really
+    liked one of the effects they used throughtout the article. They had thse little
+    colored and styled icons through the blog that, when you clicked on them, would
+    expand on the content with more deteails in a separate pane -- Either directly
+    below or to the side of the text depending on your screen size. That's pretty
+    cool! Let's try to reproduce it.
+  </p>
+
+  <h2>Ground rules</h2>
+  <ol>
+    <li>
+      The content should be accessible to a screen reader and keyboard navigable
+    </li>
+    <li>
+      The component should use the minimum amount of JavaScript possible, and
+      rely on cross-platform web standards when available.
+    </li>
+  </ol>
+
+  <h2>Starting easy</h2>
+  <section>
+    MVP for the feature would be a simple
+    <details class="unstyled">
+      <summary><code>details</code></summary>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details"
+      >
+        <p>MDN</p>
+      </a>
+    </details>
+    element, but as you can see, needs a bit more styling to make it not totally
+    break our layout.
+  </section>
+
+  <hr />
+
+  <section>
+    Lets's try again. here is another
+    <details>
+      <summary><code>details</code></summary>
+      <Code
+        code=`<style>
+            details {
+              display: inline;
+            }
+          </style>`
+      />
+    </details> with some text after it. Looks better while closed, but still breaks
+    the layout when open, since the extra height from the details element expands
+    upwards. We can fix that by adding a
+    <details class="unstyled-1">
+      <summary><code>baseline-source: first</code></summary>
+      <Code
+        lang={"css"}
+        code={stripIndent`
+          details {
+            display: inline;
+            baseline-source: first;
+          }`}
+      />
+    </details> property to the details element, which will make it expand downwards.
+    Now what do we do about the width? It's currently expanding outwards to the right
+    and pushing the rest of the text of the line out of the way.
+  </section>
+
+  <section>
+    Well, if we dont want something in the flow of the document, we... remove
+    it. Good old
+    <details class="unstyled-2">
+      <summary><code>position: absolute</code></summary>
+      <div>
+        <Code
+          lang={"css"}
+          code={stripIndent`
+          details {
+            display: inline;
+            baseline-source: first;
+
+            &:open > *:not(summary) {
+              position: absolute;
+            }
+          }`}
+        />
+      </div>
+    </details> isn't just for attaching objects to screen space.
+  </section>
+
+  <div
+    style={{
+      paddingBottom: "75vw",
+    }}
+  >
+  </div>
+</Layout>
+
+<style>
+  details:not([class^="unstyled"]) {
+    display: inline;
+  }
+
+  details.unstyled-1 {
+    display: inline;
+    baseline-source: first;
+  }
+
+  details.unstyled-2 {
+    display: inline;
+    baseline-source: first;
+
+    &:open > *:not(summary) {
+      position: absolute;
+    }
+  }
+</style>

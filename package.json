@@ -2,6 +2,9 @@
   "private": true,
   "type": "module",
   "version": "2.0.0",
+  "workspaces": [
+    "lib/*"
+  ],
   "scripts": {
     "astro": "astro",
     "build": "astro check && astro build",
