@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 
-import LocalDate from "@components/LocalDate.astro";
 import ArticleInfo from "@components/ArticleInfo.astro";
+import InlineDetails from "@components/InlineDetails.astro";
 import Code from "@components/Code.astro";
 
-import { html, stripIndent } from "common-tags";
+import { stripIndent } from "common-tags";
 
 export const title = "Fancy Inline Asides";
 export const description = `
@@ -20,12 +20,12 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <p>
     I recently read an article on
-    <a href="https://thirty-five.com/">Thirty-Five</a> about... something, and really
-    liked one of the effects they used throughtout the article. They had thse little
-    colored and styled icons through the blog that, when you clicked on them, would
-    expand on the content with more deteails in a separate pane -- Either directly
-    below or to the side of the text depending on your screen size. That's pretty
-    cool! Let's try to reproduce it.
+    <a href="https://thirty-five.com/">Thirty-Five</a> about something unrelated
+    and really liked one of the effects they used throughtout the article. They had
+    these little colored and styled icons through the blog that, when you clicked
+    on them, would expand on the content with more deteails in a separate pane —
+    Either directly below or to the side of the text depending on your screen size.
+    That's pretty cool! Let's try to reproduce it.
   </p>
 
   <h2>Ground rules</h2>
@@ -40,36 +40,47 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
   </ol>
 
   <h2>Starting easy</h2>
-  <section>
-    MVP for the feature would be a simple
-    <details class="unstyled">
-      <summary><code>details</code></summary>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details"
-      >
-        <p>MDN</p>
-      </a>
-    </details>
-    element, but as you can see, needs a bit more styling to make it not totally
-    break our layout.
-  </section>
+  <p>MVP for the feature would be a simple</p>
+  <details class="unstyled">
+    <summary><code>details</code></summary>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">
+      MDN
+    </a>
+  </details>
+  <p>
+    element. It's web native, expands when you click on it, and even has a
+    mechanism for ensuring only one panel is open at a time, which will be
+    useful later.
+  </p>
+  <p>
+    Unfortuantely, it has a few major drawbacks. The first is immediately
+    evident — details are block-level elements. A CSS class with <code
+      >display: inline</code
+    >
+    can get us part of the way there, but we still have the issue of it not being
+    <code>phrasing</code> content to the browser rendering engine, which means it
+    will close any P tags, defeating the purpose of making it inline. For the sake
+    of trying to push this idea through, I'm going to put a pin in that one for now
+    in order to see how far I can get, but consider this your foreshado-warning.
+  </p>
 
-  <hr />
-
+  <!-- tfw no auto-spacing from paragraphs -->
+  <br />
   <section>
     Lets's try again. here is another
-    <details>
+    <details class="unstyled-0">
       <summary><code>details</code></summary>
       <Code
-        code=`<style>
-            details {
-              display: inline;
-            }
-          </style>`
+        code={stripIndent`
+          details {
+            display: inline;
+          }
+        `}
       />
-    </details> with some text after it. Looks better while closed, but still breaks
-    the layout when open, since the extra height from the details element expands
-    upwards. We can fix that by adding a
+    </details>
+    with some text after it. Looks better while closed, but still breaks the layout
+    when open, since the extra height from the details element expands upwards. We
+    can fix that by adding a
     <details class="unstyled-1">
       <summary><code>baseline-source: first</code></summary>
       <Code
@@ -80,43 +91,67 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
             baseline-source: first;
           }`}
       />
-    </details> property to the details element, which will make it expand downwards.
-    Now what do we do about the width? It's currently expanding outwards to the right
-    and pushing the rest of the text of the line out of the way.
+    </details>
+    property to the details element, which will make it expand downwards. Now what
+    do we do about the width? It's currently expanding outwards to the right and
+    pushing the rest of the text of the line out of the way.
   </section>
 
   <section>
-    Well, if we dont want something in the flow of the document, we... remove
-    it. Good old
+    <br />
+    Well, if we dont want something in the flow of the document, we remove it. Good
+    old
     <details class="unstyled-2">
-      <summary><code>position: absolute</code></summary>
+      <summary>
+        <code>position: absolute</code>
+      </summary>
       <div>
         <Code
           lang={"css"}
           code={stripIndent`
-          details {
-            display: inline;
-            baseline-source: first;
+            details {
+              display: inline;
+              baseline-source: first;
 
-            &:open > *:not(summary) {
-              position: absolute;
-            }
-          }`}
+              &:open > *:not(summary) {
+                position: absolute;
+              }
+            }`}
         />
       </div>
-    </details> isn't just for attaching objects to screen space.
+    </details> isn't just for attaching objects to screen space. It removes the element
+    from ther document flow, allowing us to make space for it ourselves. By <InlineDetails
+    >
+      <summary>using JS to set a margin-bottom</summary>
+      <div>
+        <Code
+          lang={"js"}
+          code={stripIndent`
+            el.addEventListener("toggle", e => {
+              const summaryEl = el.children[0];
+              const divEl = el.children[1];
+
+              // reset
+              el.style.marginBottom = "0px";
+
+              const targetHeight = window.getComputedStyle(divEl).height;
+              if (el.open) {
+                el.style.marginBottom = targetHeight;
+
+              }
+            })
+          `}
+        />
+      </div>
+    </InlineDetails> on open set to the height of the hidden contents, we can a pretty
+    convincing recreation of the original effect.
   </section>
 
-  <div
-    style={{
-      paddingBottom: "75vw",
-    }}
-  >
-  </div>
+  <div style={{ marginBottom: "50dvh" }}></div>
 </Layout>
 
 <style>
-  details:not([class^="unstyled"]) {
+  details.unstyled-0 {
     display: inline;
   }
 
@@ -129,8 +164,18 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
     display: inline;
     baseline-source: first;
 
+    & > summary {
+      cursor: pointer;
+    }
+
+    & > summary::marker {
+      display: none;
+    }
+
     &:open > *:not(summary) {
       position: absolute;
+      left: 0;
+      width: 100%;
     }
   }
 </style>

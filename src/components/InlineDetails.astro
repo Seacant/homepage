@@ -1,0 +1,77 @@
+---
+const props = Astro.props;
+---
+
+<details class="inline">
+  <slot />
+</details>
+
+<!-- i needed to make these styles global in order to target underneath -->
+<style is:global>
+  details.inline {
+    display: inline;
+    /* display: contents; */
+    baseline-source: first;
+
+    & > summary {
+      cursor: pointer;
+      /* display: inline; */
+    }
+
+    & > summary::marker {
+      display: none;
+    }
+
+    @supports not selector(::details-content) {
+      & > :not(summary) {
+        /* border: 5px solid pink; */
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  /* todo: refactor all of this chrome-specific stuff better integrated */
+  @supports selector(::details-content) {
+    details.inline > summary {
+      display: inline;
+      text-decoration: underline;
+    }
+
+    details[open] {
+      display: inline-block;
+    }
+
+    details.inline:not([open])::details-content {
+      position: absolute;
+    }
+    details.inline[open]::details-content {
+      /* border: 5px solid pink; */
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  document
+    .querySelectorAll<HTMLDetailsElement>("details.inline")
+    .forEach((el) => {
+      el.addEventListener("toggle", (e) => {
+        const summaryEl = el.children[0] as HTMLElement;
+        const divEl = el.children[1];
+
+        // reset
+        // summaryEl.style.marginBottom = "0px";
+        el.style.marginBottom = "0px";
+
+        const targetHeight = window.getComputedStyle(divEl).height;
+        if (el.open) {
+          // summaryEl.style.marginBottom = targetHeight;
+          el.style.marginBottom = targetHeight;
+        }
+      });
+    });
+</script>
