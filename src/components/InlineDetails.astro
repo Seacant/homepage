@@ -1,30 +1,42 @@
----
-const props = Astro.props;
----
-
 <details class="inline">
   <slot />
 </details>
 
-<!-- i needed to make these styles global in order to target underneath -->
+<!--
+  I needed to make these styles global in order to target underneath.
+  Since we are still nesting _under_ details.inline, this should not leak
+-->
 <style is:global>
   details.inline {
-    display: inline;
-    /* display: contents; */
+    display: inline-block;
     baseline-source: first;
 
     & > summary {
       cursor: pointer;
-      /* display: inline; */
-    }
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      color: var(--primary-link-color);
+      text-decoration-color: var(--secondary-link-color);
 
-    & > summary::marker {
-      display: none;
+      /*
+        inline-block is necessary for chrome to not break the line after the
+        discolsure, and also functions to turn off the default disclosure
+        triangle so we can add our own
+      */
+      display: inline-block;
+      position: relative;
+      padding-inline-start: 2ch;
     }
 
     @supports not selector(::details-content) {
       & > :not(summary) {
-        /* border: 5px solid pink; */
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+    }
+    @supports selector(::details-content) {
+      &::details-content {
         position: absolute;
         left: 0;
         width: 100%;
@@ -32,26 +44,22 @@ const props = Astro.props;
     }
   }
 
-  /* todo: refactor all of this chrome-specific stuff better integrated */
-  @supports selector(::details-content) {
-    details.inline > summary {
-      display: inline;
-      text-decoration: underline;
-    }
-
-    details[open] {
-      display: inline-block;
-    }
-
-    details.inline:not([open])::details-content {
-      position: absolute;
-    }
-    details.inline[open]::details-content {
-      /* border: 5px solid pink; */
-      position: absolute;
-      left: 0;
-      width: 100%;
-    }
+  /* fake, animation-friendly disclosure triangle */
+  details.inline > summary::before {
+    content: "";
+    color: var(--primary-link-color);
+    border-width: 0.3em 0 0.3em 0.6em;
+    border-style: solid;
+    border-color: transparent transparent transparent currentColor;
+    position: absolute;
+    top: 0.4em;
+    left: 0.4ch;
+    transform: rotate(0);
+    transform-origin: 0.2rem 50%;
+    transition: 0.25s transform ease;
+  }
+  details.inline[open] > summary:before {
+    transform: rotate(90deg);
   }
 </style>
 
@@ -59,18 +67,14 @@ const props = Astro.props;
   document
     .querySelectorAll<HTMLDetailsElement>("details.inline")
     .forEach((el) => {
-      el.addEventListener("toggle", (e) => {
-        const summaryEl = el.children[0] as HTMLElement;
+      el.addEventListener("toggle", () => {
         const divEl = el.children[1];
 
-        // reset
-        // summaryEl.style.marginBottom = "0px";
-        el.style.marginBottom = "0px";
+        el.style.paddingBlockEnd = "0px";
 
         const targetHeight = window.getComputedStyle(divEl).height;
         if (el.open) {
-          // summaryEl.style.marginBottom = targetHeight;
-          el.style.marginBottom = targetHeight;
+          el.style.paddingBlockEnd = targetHeight;
         }
       });
     });

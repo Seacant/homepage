@@ -12,7 +12,7 @@ type BlogData = AstroInstance &
 // Find all the blogposts in the /posts/ folder, pick the last 3, import them,
 // and pull summary info for display
 const posts = await Promise.all(
-  Object.values(import.meta.glob<BlogData>("./posts/*.astro")).map((f) => f())
+  Object.values(import.meta.glob<BlogData>("./posts/*.astro")).map((f) => f()),
 ).then((posts) =>
   posts
     .filter((post) => post.date)
@@ -21,7 +21,7 @@ const posts = await Promise.all(
       const bTime = b.date?.getTime() ?? 0;
       return bTime - aTime;
     })
-    .slice(0, 3)
+    .slice(0, 3),
 );
 ---
 
@@ -40,7 +40,7 @@ const posts = await Promise.all(
 
 <style>
   article {
-    padding: 2ch;
+    padding: 0.4em;
 
     & > h2 {
       margin: 0;
