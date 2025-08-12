@@ -1,0 +1,272 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import ArticleInfo from "@components/ArticleInfo.astro";
+import InlineDetails from "@components/InlineDetails.astro";
+import Code from "@components/Code.astro";
+
+import { stripIndent } from "common-tags";
+
+export const title = "Fancy Inline Asides";
+export const description = `
+  Extending the browser-native <details /> element to look good embedded
+  in the middle of paragraphs
+`;
+export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
+---
+
+<Layout title="Inline Asides">
+  <h1>Fancy Inline Asides</h1>
+  <ArticleInfo date={date} />
+
+  <p>
+    I recently read an article on
+    <a href="https://thirty-five.com/">Thirty-Five</a> about something unrelated
+    and really liked one of the effects they used throughtout the article. They had
+    these little colored and styled icons through the blog that, when you clicked
+    on them, would expand on the content with more deteails in a separate pane —
+    Either directly below or to the side of the text depending on your screen size.
+    That's pretty cool! Let's try to reproduce it.
+  </p>
+
+  <h2>Ground rules</h2>
+  <ol>
+    <li>
+      The content should be accessible to a screen reader and keyboard navigable
+    </li>
+    <li>
+      The component should use the minimum amount of JavaScript possible, and
+      rely on cross-platform web standards when available.
+    </li>
+  </ol>
+
+  <h2>Starting easy</h2>
+  <p>MVP for the feature would be a simple</p>
+  <details class="unstyled">
+    <summary><code>details</code></summary>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">
+      MDN
+    </a>
+  </details>
+  <p>
+    element. It's web native, expands when you click on it, and even has a
+    mechanism for ensuring only one panel is open at a time, which will be
+    useful later.
+  </p>
+  <p>
+    Unfortuantely, it has a few major drawbacks. The first is immediately
+    evident — details are block-level elements. A CSS class with <code
+      >display: inline</code
+    >
+    can get us part of the way there, but we still have the issue of it not being
+    <code>phrasing</code> content to the browser rendering engine, which means it
+    will close any <code>p</code> tags, defeating the purpose of making it inline.
+    For the sake of trying to push this idea through, I'm going to put a pin in that
+    one for now in order to see how far I can get, but consider this your foreshado-warning.
+  </p>
+
+  <!-- tfw no auto-spacing from paragraphs -->
+  <br />
+  <section>
+    Lets's try again. here is another
+    <details class="unstyled-0">
+      <summary><code>details</code></summary>
+      <Code
+        code={stripIndent`
+          details {
+            display: inline;
+          }
+        `}
+      />
+    </details>
+    with some text after it. Looks better while closed, but still breaks the layout
+    when open, since the extra height from the details element expands upwards. We
+    can fix that by adding a
+    <details class="unstyled-1">
+      <summary><code>baseline-source: first</code></summary>
+      <Code
+        lang={"css"}
+        code={stripIndent`
+          details {
+            display: inline;
+            baseline-source: first;
+          }`}
+      />
+    </details>
+    property to the details element, which will make it expand downwards. Now what
+    do we do about the width? It's currently expanding outwards to the right and
+    pushing the rest of the text of the line out of the way.
+  </section>
+
+  <section>
+    <br />
+    Well, if we dont want something in the flow of the document, we remove it. Good
+    old
+    <details class="unstyled-2">
+      <summary>
+        <code>position: absolute</code>
+      </summary>
+      <div>
+        <Code
+          lang={"css"}
+          code={stripIndent`
+            details {
+              display: inline;
+              baseline-source: first;
+
+              &:open > *:not(summary) {
+                position: absolute;
+              }
+            }`}
+        />
+      </div>
+    </details>
+    <div style="text-align: center;">
+      <br />
+      <br />
+      <br />
+      <br />
+      (this space is intentionally left blank)
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+
+    isn't just for attaching objects to screen space. It removes the element
+    from ther document flow, allowing us to make space for it ourselves. By <InlineDetails
+    >
+      <summary>using JS to set a margin-bottom</summary>
+      <div>
+        <Code
+          lang={"js"}
+          code={stripIndent`
+            el.addEventListener("toggle", () => {
+              const divEl = el.children[1];
+
+              el.style.paddingBlockEnd = "0px";
+
+              const targetHeight = window.getComputedStyle(divEl).height;
+              if (el.open) {
+                el.style.paddingBlockEnd = targetHeight;
+              }
+            });
+          `}
+        />
+      </div>
+    </InlineDetails> on open set to the height of the hidden contents, we can a pretty
+    convincing recreation of the original effect. We also had to replace the default
+    disclosure triangle with
+    <InlineDetails>
+      <summary>our own</summary>
+      <div>
+        <Code
+          lang={"css"}
+          code={stripIndent`
+
+            & > summary {
+              cursor: pointer;
+
+              /* Make the details look like our links */
+              text-decoration: underline;
+              text-decoration-thickness: 2px;
+              color: var(--primary-link-color);
+              text-decoration-color: var(--secondary-link-color);
+
+              /*
+                inline-block is necessary for chrome to not break
+                the line after the discolsure, and also functions
+                to turn off the default disclosure triangle so we
+                can add our own
+              */
+              display: inline-block;
+              position: relative;
+              padding-inline-start: 2ch;
+            }
+
+            /*
+              credit to the wonderfully inspiring folk over at
+              https://css-tricks.com/how-to-animate-the-details-element/
+            */
+            details.inline > summary::before {
+              content: "";
+              border-width: 0.3em 0 0.3em 0.6em;
+              border-style: solid;
+              border-color: transparent transparent transparent currentColor;
+              position: absolute;
+              top: 0.4em;
+              left: 0.4ch;
+              transform: rotate(0);
+              transform-origin: 0.2rem 50%;
+              transition: 0.25s transform ease;
+            }
+            details.inline[open] > summary:before {
+              transform: rotate(90deg);
+            }
+          `}
+        />
+      </div>
+    </InlineDetails>
+    (and took the opportunity to animate it), due to chrome compatibility pushing
+    me towards turning the summary into a <code>display: inline-block;</code> as
+    they really did not like to show margin/padding on my <code
+      >inline
+    </code>summary element.
+  </section>
+
+  <section>
+    <br />
+    <h2>Dealing with the element in the room</h2>
+    Early browsers made some... questionable decisions that can lead to unexpected
+    behavior when you do things they don't expect. In our case here, the browser
+    attempts to helpfully close paragarph tags when it thinks you are done with them.
+    Since it assumes that the details element is going to be a block element, it
+    closes the currently open P tag when hit. This is not what we want, and I have
+    been avoiding the isuse thus far by not using <code>p</code>
+    tags when I knew I was going to include a details element inside of the block
+    of text. That sucks. It means I have to manually add back the side-wide margins
+    that I normally get for free by writing semantic HTML and it means that the inclusion
+    of a details element 'leaks' out and affects how you write surrounding content.
+    Moreover, a <code>details</code> element is not <q>Phrasing Content</q> and thus
+    not technically allowed inside of a P tag even if we could force it.
+  </section>
+
+  <section>
+    <br />
+    I am still working on a solution to this :(
+  </section>
+
+  <div style={{ marginBottom: "50dvh" }}></div>
+</Layout>
+
+<style>
+  details.unstyled-0 {
+    display: inline;
+  }
+
+  details.unstyled-1 {
+    display: inline;
+    baseline-source: first;
+  }
+
+  details.unstyled-2 {
+    display: inline;
+    baseline-source: first;
+
+    & > summary {
+      cursor: pointer;
+    }
+
+    & > summary::marker {
+      display: none;
+    }
+
+    &:open > *:not(summary) {
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+</style>
