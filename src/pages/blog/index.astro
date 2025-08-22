@@ -9,8 +9,9 @@ type BlogData = AstroInstance &
     date: Date;
   }>;
 
-// Find all the blogposts in the /posts/ folder, pick the last 3, import them,
+// Find all the blogposts in the /posts/ folder, import them,
 // and pull summary info for display
+// todo: pagination? that might be hard with it being static
 const posts = await Promise.all(
   Object.values(import.meta.glob<BlogData>("./posts/*.astro")).map((f) => f()),
 ).then((posts) =>
@@ -21,11 +22,12 @@ const posts = await Promise.all(
       const bTime = b.date?.getTime() ?? 0;
       return bTime - aTime;
     })
-    .slice(0, 3),
 );
 ---
 
 <Layout title="Blog Index">
+  <h1>Recent Posts</h1>
+  <hr />
   {
     posts.map((post) => (
       <article>
@@ -39,11 +41,15 @@ const posts = await Promise.all(
 </Layout>
 
 <style>
+  hr {
+    margin-bottom: 1em;
+    margin-inline: inherit;
+  }
   article {
     padding: 0.4em;
 
     & > h2 {
-      margin: 0;
+      margin-block: 0 0.4em;
     }
     & > p {
       padding-left: 2ch;

@@ -3,11 +3,10 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Resume">
-  <article>
+  <article class="resume">
     <section class="introduction">
       <div>
-        <h2>Travis Fletcher</h2>
-
+        <h1>Travis Fletcher</h1>
         <span> Full Stack Senior Software Engineer </span>
       </div>
       <address>
@@ -27,7 +26,11 @@ import Layout from "@layouts/Layout.astro";
       <div>
         Languages:
         <div class="section-prose">
-          Typescript, Ruby, HTML/CSS, Perl, SQL, Rust
+          <span data-highlight="ts">Typescript</span>,
+          <span data-highlight="ruby">Ruby</span>,
+          <span data-highlight="css">HTML/CSS</span>,
+          <span data-highlight="perl">Perl</span>,
+          <span data-highlight="sql">SQL</span>, Rust
         </div>
       </div>
       <div>
@@ -37,130 +40,129 @@ import Layout from "@layouts/Layout.astro";
       <div>
         Techniques:
         <div class="section-prose">
-          Domain-Driven Design, Functional Programming, Test-Driven Development
+          <span data-highlight="DDD">Domain-Driven Design</span>,
+          <span>Functional Programming</span>,
+          <span data-highlight="TDD">Test-Driven Development</span>
         </div>
       </div>
       <div>
         Specialties:
         <div class="section-prose">
-          Software/Feature Architecture, Performance & Scalability,
-          Accessibility, Machine Learning
+          <span data-highlight="arch">Software/Feature Architecture</span>,
+          <span data-highlight="perf">Performance & Scalability</span>,
+          <span data-highlight="a11y">Accessibility</span>, Machine Learning
         </div>
       </div>
     </section>
     <section>
       <h2>Education</h2>
       <div>
-        Loveland High School
-        <span class="year">2014-2017</span>
-      </div>
-
-      <div>
-        Northern Kentucky University
-        <span class="year">2017-2021</span>
+        <span class="company-name"> Northern Kentucky University </span>
+        <span class="year">2017–2021</span>
         <div class="section-prose">Data Science Major & Management Minor</div>
       </div>
     </section>
     <section>
       <h2>Employment</h2>
       <div>
-        ExamSpark
+        <span class="company-name"> ExamSpark </span>
         <div class="section-prose">
-          Senior Software Engineer
-          <span class="year">2023-</span>
+          <span data-highlight-target="ts css"> Senior Software Engineer</span>
+          <span class="year">2023–</span>
         </div>
         <ul>
           <li>
             Developed in cutting-edge cloud-native AWS Amplify environment via
-            full-stack Typescript
+            full-stack Typescript.
           </li>
         </ul>
       </div>
       <div>
-        Instructure
+        <span class="company-name"> Instructure </span>
         <div class="section-prose">
-          Senior Software Engineer
-          <span class="year">2022-2023</span>
+          <span data-highlight-target="ruby sql ts css"
+            >Senior Software Engineer</span
+          >
+          <span class="year">2022–2023</span>
         </div>
         <div class="section-prose">
-          Software Engineer
-          <span class="year">2021-2022</span>
+          <span data-highlight-target="perl sql ts css">
+            Software Engineer
+          </span>
+          <span class="year">2021–2022</span>
         </div>
         <ul>
           <li>
-            Maintained and scaled Ruby on Rails app with 10000+ Rps across 500+
-            servers
+            Maintained and scaled Ruby on Rails app with <span
+              data-highlight-target="perf"
+              >10000+ Rps across 500+ servers.
+            </span>
           </li>
           <li>
             Worked extensively with Product to plan projects that solved
-            customer needs
+            customer needs.
           </li>
           <li>
-            Led technical discussions during Software Architecture Planning
+            Led technical discussions during <span
+              data-highlight-target="DDD arch"
+              >Software Architecture Planning.</span
+            >
           </li>
-          <li>Championed accessible web design during front-end discussions</li>
+          <li>
+            <span data-highlight-target="a11y"
+              >Championed accessible web design</span
+            > during front-end discussions.
+          </li>
         </ul>
       </div>
       <div>
-        Certica Solutions
-        <div class="section-prose">
-          Software Engineer
-          <span class="year">2019-2021</span>
-        </div>
-        <div class="section-prose">
-          Junior Software Engineer
-          <span class="year">2015-2019</span>
-        </div>
-        <ul>
-          <li>
-            Provide front-end website and database support to both internal and
-            external clients
-          </li>
-          <li>Develop unit tests for legacy monolithic codebase</li>
-          <li>
-            Maintain a RESTful JSON API with a full regression testing suite
-          </li>
-          <li>Use domain-driven design to retrofit OOP to codebase</li>
-        </ul>
-      </div>
-      <div>
-        Northern Kentucky University
+        <span class="company-name"> Northern Kentucky University </span>
         <div class="section-prose">
           Research Assistant
-          <span class="year">2018-2019</span>
+          <span class="year">2018–2019</span>
         </div>
         <ul>
           <li>
             Developed an Internet of Things security management solution, Java
-            Experience
+            Experience.
           </li>
-          <li>Presented findings at NKU Celebration of Student Research</li>
+          <li>Presented findings at NKU Celebration of Student Research.</li>
+        </ul>
+      </div>
+      <div>
+        <span class="company-name"> Certica Solutions </span>
+        <div class="section-prose">
+          <span data-highlight-target="perl css sql">Software Engineer </span>
+          <span class="year">2019–2021</span>
+        </div>
+        <div class="section-prose">
+          <span data-highlight-target="perl css sql">
+            Junior Software Engineer
+          </span>
+          <span class="year">2015–2019</span>
+        </div>
+        <ul>
+          <li>
+            Provide front-end website and database support to both internal and
+            external clients.
+          </li>
+          <li>Develop unit tests for legacy monolithic codebase.</li>
+          <li>
+            Maintain a RESTful JSON API with a
+            <span data-highlight-target="TDD">
+              full regression testing suite.
+            </span>
+          </li>
+          <li>
+            <span data-highlight-target="DDD arch">
+              Use domain-driven design to retrofit OOP to codebase.
+            </span>
+          </li>
         </ul>
       </div>
     </section>
     <section>
       <h2>Experience</h2>
-      <div>
-        FTC Robotics
-        <span class="year">2015-2017</span>
-        <div class="section-prose">Lead Programmer</div>
-        <div class="section-prose">
-          Java, Android Studio, Github, Gradle, and Vim
-        </div>
-        <div class="section-prose">
-          Created a robot using Java to compete in predetermined challenges
-        </div>
-      </div>
-      <div>
-        UC IT Expo
-        <span class="year year--single">2016</span>
-        <div class="section-prose">
-          Lead Programmer; 1st place (High School category)
-        </div>
-        <div class="section-prose">
-          Developed a low-cost camera mount to follow a lecturer during class
-        </div>
-      </div>
       <div>
         RevolutionUC
         <span class="year year--single">2017</span>
@@ -168,6 +170,17 @@ import Layout from "@layouts/Layout.astro";
         <div class="section-prose">
           V-Arrrgh - Virtual Reality therapy program for Amblyopia, C#; 1st
           place
+        </div>
+      </div>
+      <div>
+        FTC Robotics
+        <span class="year">2015–2017</span>
+        <div class="section-prose">Lead Programmer</div>
+        <div class="section-prose">
+          Java, Android Studio, Github, Gradle, and Vim
+        </div>
+        <div class="section-prose">
+          Created a robot using Java to compete in predetermined challenges
         </div>
       </div>
     </section>
@@ -182,7 +195,7 @@ import Layout from "@layouts/Layout.astro";
     font-display: swap;
   }
 
-  article {
+  article.resume {
     max-width: 7.5in;
     margin: auto;
 
@@ -196,22 +209,22 @@ import Layout from "@layouts/Layout.astro";
     font-weight: 500;
 
     & ul {
-      margin: 0.25em;
+      margin-block: 0.25em;
     }
 
     @media print {
       font-size: 14px;
-      line-height: 14px;
+      line-height: 16px;
       color: black;
+
+      /* The default browser print adds its own margins, so turn ours off. */
+      max-width: 8.5in;
+      margin: 0;
 
       & a {
         text-decoration: none;
         color: black;
       }
-
-      /* The default browser print adds its own margins, so turn ours off. */
-      width: 8.5in;
-      margin: 0;
     }
   }
 
@@ -219,6 +232,10 @@ import Layout from "@layouts/Layout.astro";
     display: contents;
     break-before: auto;
     break-inside: avoid;
+  }
+
+  .company-name {
+    font-style: italic;
   }
 
   .year {
@@ -234,10 +251,6 @@ import Layout from "@layouts/Layout.astro";
 
   .section-prose {
     margin-left: 2ch;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 
     & > .year {
       margin-left: auto;
@@ -263,4 +276,58 @@ import Layout from "@layouts/Layout.astro";
     margin: 0;
     line-height: 1.1em;
   }
+
+  @media not print {
+    span::highlight(skill-callout) {
+      background-color: color-mix(
+        in srgb,
+        color-mix(in srgb, yellow, black 10%),
+        transparent 80%
+      );
+      font-weight: bold;
+    }
+    span[data-highlight].highlight-enabled {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 4px;
+
+      &:focus-visible {
+        outline-offset: 1px;
+        text-decoration: none;
+        outline: 2px solid var(--secondary-link-color);
+        border-radius: 3px;
+      }
+    }
+  }
 </style>
+<script>
+  const descriptors =
+    document.querySelectorAll<HTMLSpanElement>("[data-highlight]");
+  descriptors.forEach((descriptor) => {
+    descriptor.tabIndex = 0;
+    descriptor.ariaKeyShortcuts = "Space";
+    descriptor.classList.add("highlight-enabled");
+
+    const highlight = descriptor.dataset.highlight;
+    const setter = () => {
+      const ranges: AbstractRange[] = [];
+      document
+        .querySelectorAll(`[data-highlight-target~="${highlight}"]`)
+        .forEach((target) => {
+          console.debug("Highlighting", target);
+          const range = new Range();
+          range.selectNodeContents(target);
+          ranges.push(range);
+        });
+
+      CSS.highlights.set("skill-callout", new Highlight(...ranges));
+    };
+
+    descriptor.addEventListener("click", setter);
+    descriptor.addEventListener("keydown", (e) => {
+      if (e.key !== " ") return;
+      setter();
+    });
+  });
+</script>
