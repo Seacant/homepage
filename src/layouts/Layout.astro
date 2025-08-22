@@ -16,7 +16,6 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Travis' homepage" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -89,7 +88,7 @@ const { title } = Astro.props;
     color-scheme: light dark;
     scrollbar-gutter: both-edges stable;
 
-    --layout-background-color: #d4d0c9;
+    --layout-background-color: #fff0e0;
     --primary-text-color: #333;
     --primary-link-color: #5a1515;
     --secondary-link-color: #971a1a;
@@ -97,8 +96,8 @@ const { title } = Astro.props;
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --primary-text-color: #c7beb4;
       --layout-background-color: #151316;
+      --primary-text-color: #c7beb4;
       --primary-link-color: #d58080;
       --secondary-link-color: #dd3a31;
     }
@@ -158,13 +157,21 @@ const { title } = Astro.props;
     margin-top: 0;
   }
 
-  h1 { font-size: 1.4em; }
-  h2 { font-size: 1.2em; }
-  h4 { font-size: 1em; }
-  h5 { font-size: 1em; }
-  h6 { font-size: 1em; }
-
-
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  h6 {
+    font-size: 1em;
+  }
 
   header {
     display: flex;
