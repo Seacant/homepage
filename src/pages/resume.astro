@@ -25,7 +25,7 @@ import Layout from "@layouts/Layout.astro";
       <h2>Technical Skills</h2>
       <div>
         Languages:
-        <div class="section-prose">
+        <div class="skill-list">
           <span data-highlight="ts">Typescript</span>,
           <span data-highlight="ruby">Ruby</span>,
           <span data-highlight="css">HTML/CSS</span>,
@@ -35,11 +35,11 @@ import Layout from "@layouts/Layout.astro";
       </div>
       <div>
         Technologies:
-        <div class="section-prose">React, Ruby on Rails, Terraform, AWS</div>
+        <div class="skill-list">React, Ruby on Rails, Terraform, AWS</div>
       </div>
       <div>
         Techniques:
-        <div class="section-prose">
+        <div class="skill-list">
           <span data-highlight="DDD">Domain-Driven Design</span>,
           <span>Functional Programming</span>,
           <span data-highlight="TDD">Test-Driven Development</span>
@@ -47,7 +47,7 @@ import Layout from "@layouts/Layout.astro";
       </div>
       <div>
         Specialties:
-        <div class="section-prose">
+        <div class="skill-list">
           <span data-highlight="arch">Software/Feature Architecture</span>,
           <span data-highlight="perf">Performance & Scalability</span>,
           <span data-highlight="a11y">Accessibility</span>, Machine Learning
@@ -57,18 +57,18 @@ import Layout from "@layouts/Layout.astro";
     <section>
       <h2>Education</h2>
       <div>
-        <span class="company-name"> Northern Kentucky University </span>
-        <span class="year">2017–2021</span>
-        <div class="section-prose">Data Science Major & Management Minor</div>
+        <span>Northern Kentucky University</span>
+        <span class="years">2017–2021</span>
+        <div class="job-title">Data Science Major & Management Minor</div>
       </div>
     </section>
     <section>
       <h2>Employment</h2>
       <div>
-        <span class="company-name"> ExamSpark </span>
-        <div class="section-prose">
+        <h3 class="company-name">ExamSpark</h3>
+        <div class="job-title">
           <span data-highlight-target="ts css"> Senior Software Engineer</span>
-          <span class="year">2023–</span>
+          <span class="years">2023–</span>
         </div>
         <ul>
           <li>
@@ -78,18 +78,18 @@ import Layout from "@layouts/Layout.astro";
         </ul>
       </div>
       <div>
-        <span class="company-name"> Instructure </span>
-        <div class="section-prose">
+        <h3 class="company-name">Instructure</h3>
+        <div class="job-title">
           <span data-highlight-target="ruby sql ts css"
             >Senior Software Engineer</span
           >
-          <span class="year">2022–2023</span>
+          <span class="years">2022–2023</span>
         </div>
-        <div class="section-prose">
+        <div class="job-title">
           <span data-highlight-target="perl sql ts css">
             Software Engineer
           </span>
-          <span class="year">2021–2022</span>
+          <span class="years">2021–2022</span>
         </div>
         <ul>
           <li>
@@ -116,10 +116,10 @@ import Layout from "@layouts/Layout.astro";
         </ul>
       </div>
       <div>
-        <span class="company-name"> Northern Kentucky University </span>
-        <div class="section-prose">
+        <h3 class="company-name">Northern Kentucky University</h3>
+        <div class="job-title">
           Research Assistant
-          <span class="year">2018–2019</span>
+          <span class="years">2018–2019</span>
         </div>
         <ul>
           <li>
@@ -130,16 +130,16 @@ import Layout from "@layouts/Layout.astro";
         </ul>
       </div>
       <div>
-        <span class="company-name"> Certica Solutions </span>
-        <div class="section-prose">
+        <h3 class="company-name">Certica Solutions</h3>
+        <div class="job-title">
           <span data-highlight-target="perl css sql">Software Engineer </span>
-          <span class="year">2019–2021</span>
+          <span class="years">2019–2021</span>
         </div>
-        <div class="section-prose">
+        <div class="job-title">
           <span data-highlight-target="perl css sql">
             Junior Software Engineer
           </span>
-          <span class="year">2015–2019</span>
+          <span class="years">2015–2019</span>
         </div>
         <ul>
           <li>
@@ -164,62 +164,54 @@ import Layout from "@layouts/Layout.astro";
     <section>
       <h2>Experience</h2>
       <div>
-        RevolutionUC
-        <span class="year year--single">2017</span>
-        <div class="section-prose">24-hour hackathon</div>
-        <div class="section-prose">
-          V-Arrrgh - Virtual Reality therapy program for Amblyopia, C#; 1st
-          place
+        <span>RevolutionUC</span>
+        <div class="experience-description">
+          <span class="year">2017</span>
+          <div>24-hour hackathon</div>
+          <div>
+            V-Arrrgh - Virtual Reality therapy program for Amblyopia; 1st Place
+          </div>
         </div>
       </div>
       <div>
-        FTC Robotics
-        <span class="year">2015–2017</span>
-        <div class="section-prose">Lead Programmer</div>
-        <div class="section-prose">
-          Java, Android Studio, Github, Gradle, and Vim
-        </div>
-        <div class="section-prose">
-          Created a robot using Java to compete in predetermined challenges
+        <span>FTC Robotics</span>
+        <div class="experience-description">
+          <span>Lead Programmer</span>
+          <span class="years">2015–2017</span>
+          <div>Java, Android Studio, Github, Gradle, and Vim</div>
+          <div>
+            Created a robot using Java to compete in predetermined challenges
+          </div>
         </div>
       </div>
     </section>
   </article>
 </Layout>
 <style>
-  @font-face {
-    font-family: "Inconsolata";
-    src: url("/fonts/inconsolata.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
   article.resume {
     max-width: 7.5in;
     margin: auto;
 
-    display: flex;
-    flex-direction: column;
     grid-column: var(--column-full);
-    gap: 1ch;
 
-    font-family: Inconsolata, monospace;
-    line-height: 1.2em;
-    font-weight: 500;
+    font-family: monospace;
+    line-height: 1.3em;
 
     & ul {
       margin-block: 0.25em;
+
+      & li {
+        margin-block: 0.2em;
+      }
     }
 
     @media print {
       font-size: 14px;
-      line-height: 16px;
+      line-height: 18px;
       color: black;
 
       /* The default browser print adds its own margins, so turn ours off. */
-      max-width: 8.5in;
-      margin: 0;
+      max-width: 7in;
 
       & a {
         text-decoration: none;
@@ -229,32 +221,32 @@ import Layout from "@layouts/Layout.astro";
   }
 
   section {
-    display: contents;
     break-before: auto;
     break-inside: avoid;
   }
 
-  .company-name {
+  h2 {
+    text-transform: uppercase;
+  }
+  h3.company-name {
+    font-size: 1em;
     font-style: italic;
   }
 
-  .year {
+  .years {
     float: right;
-
     /* 20xx-20xx is 9 characters */
     width: 9ch;
   }
-
-  .year--single {
-    width: 5ch;
+  .year {
+    float: right;
+    width: 4ch;
   }
 
-  .section-prose {
+  .skill-list,
+  .job-title,
+  .experience-description {
     margin-left: 2ch;
-
-    & > .year {
-      margin-left: auto;
-    }
   }
 
   .introduction {
@@ -271,26 +263,31 @@ import Layout from "@layouts/Layout.astro";
     }
   }
 
-  h2 {
-    text-transform: uppercase;
-    margin: 0;
-    line-height: 1.1em;
-  }
-
   @media not print {
     span::highlight(skill-callout) {
+      /*
+        light mode has less transparency because the contrast
+        between yellow and black is already great
+      */
       background-color: color-mix(
         in srgb,
-        color-mix(in srgb, yellow, black 10%),
-        transparent 80%
+        color-mix(in srgb, yellow, black 5%),
+        transparent 50%
       );
-      font-weight: bold;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: color-mix(
+          in srgb,
+          color-mix(in srgb, yellow, black 10%),
+          transparent 80%
+        );
+      }
     }
     span[data-highlight].highlight-enabled {
       cursor: pointer;
       text-decoration: underline;
       text-decoration-style: dotted;
-      text-underline-offset: 4px;
+      text-decoration-thickness: from-font;
 
       &:focus-visible {
         outline-offset: 1px;
@@ -305,6 +302,8 @@ import Layout from "@layouts/Layout.astro";
   const descriptors =
     document.querySelectorAll<HTMLSpanElement>("[data-highlight]");
   descriptors.forEach((descriptor) => {
+    // gracefully enhance targeted elements
+    // only when JS is enabled
     descriptor.tabIndex = 0;
     descriptor.ariaKeyShortcuts = "Space";
     descriptor.classList.add("highlight-enabled");
@@ -327,6 +326,7 @@ import Layout from "@layouts/Layout.astro";
     descriptor.addEventListener("click", setter);
     descriptor.addEventListener("keydown", (e) => {
       if (e.key !== " ") return;
+      e.preventDefault();
       setter();
     });
   });
