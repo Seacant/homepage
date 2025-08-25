@@ -188,6 +188,12 @@ import Layout from "@layouts/Layout.astro";
   </article>
 </Layout>
 <style>
+  @page {
+    size: letter;
+    page-orientation: upright;
+    margin: 0.5in;
+  }
+
   article.resume {
     max-width: 7.5in;
     margin: auto;
@@ -195,7 +201,7 @@ import Layout from "@layouts/Layout.astro";
     grid-column: var(--column-full);
 
     font-family: monospace;
-    line-height: 1.3em;
+    line-height: 1.4;
 
     & ul {
       margin-block: 0.25em;
@@ -207,11 +213,14 @@ import Layout from "@layouts/Layout.astro";
 
     @media print {
       font-size: 14px;
-      line-height: 16px;
+      line-height: 1.18;
       color: black;
 
-      /* The default browser print adds its own margins, so turn ours off. */
-      max-width: 7in;
+      /*
+        7.5in should theoretically be correct by my math but Chrome is cutting
+        off the last 2 characters at that width, so 7.2 it is.
+      */
+      max-width: 7.2in;
 
       & a {
         text-decoration: none;
