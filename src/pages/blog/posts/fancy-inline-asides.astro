@@ -22,10 +22,10 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
   <p>
     I recently read an article on
     <a href="https://thirty-five.com/">Thirty-Five</a> about something unrelated
-    and really liked one of the effects they used throughtout the article. They had
+    and really liked one of the effects they used throughout the article. They had
     these little colored and styled icons through the blog that, when you clicked
-    on them, would expand on the content with more deteails in a separate pane —
-    Either directly below or to the side of the text depending on your screen size.
+    on them, would expand on the content with more details in a separate pane —
+    either directly below or to the side of the text, depending on your screen size.
     That's pretty cool! Let's try to reproduce it.
   </p>
 
@@ -54,7 +54,7 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
     useful later.
   </p>
   <p>
-    Unfortuantely, it has a few major drawbacks. The first is immediately
+    Unfortunately, it has a few major drawbacks. The first is immediately
     evident — details are block-level elements. A CSS class with <code
       >display: inline</code
     >
@@ -62,13 +62,13 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
     <code>phrasing</code> content to the browser rendering engine, which means it
     will close any <code>p</code> tags, defeating the purpose of making it inline.
     For the sake of trying to push this idea through, I'm going to put a pin in that
-    one for now in order to see how far I can get, but consider this your foreshado-warning.
+    one for now in order to see how far I can get, but consider this your foreshadow-warning.
   </p>
 
   <!-- tfw no auto-spacing from paragraphs -->
   <br />
   <section>
-    Lets's try again. here is another
+    Let's try again. here is another
     <details class="unstyled-0">
       <summary><code>details</code></summary>
       <Code
@@ -100,7 +100,7 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
 
   <section>
     <br />
-    Well, if we dont want something in the flow of the document, we remove it. Good
+    Well, if we don't want something in the flow of the document, we remove it. Good
     old
     <details class="unstyled-2">
       <summary>
@@ -209,7 +209,7 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
         />
       </div>
     </InlineDetails>
-    (and took the opportunity to animate it), due to chrome compatibility pushing
+    (and took the opportunity to animate it), due to Chrome compatibility pushing
     me towards turning the summary into a <code>display: inline-block;</code> as
     they really did not like to show margin/padding on my <code
       >inline
@@ -221,16 +221,16 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
     <h2>Dealing with the element in the room</h2>
     Early browsers made some... questionable decisions that can lead to unexpected
     behavior when you do things they don't expect. In our case here, the browser
-    attempts to helpfully close paragarph tags when it thinks you are done with them.
+    attempts to helpfully close paragraph tags when it thinks you are done with them.
     Since it assumes that the details element is going to be a block element, it
     closes the currently open P tag when hit. This is not what we want, and I have
-    been avoiding the isuse thus far by not using <code>p</code>
-    tags when I knew I was going to include a details element inside of the block
-    of text. That sucks. It means I have to manually add back the side-wide margins
-    that I normally get for free by writing semantic HTML and it means that the inclusion
+    been avoiding the issue thus far by not using <code>p</code>
+    tags when I knew I was going to include a details element inside the block
+    of text. That sucks. This means I have to manually add back the side-wide margins
+    that I normally get for free by writing semantic HTML, and it means that the inclusion
     of a details element 'leaks' out and affects how you write surrounding content.
     Moreover, a <code>details</code> element is not <q>Phrasing Content</q> and thus
-    not technically allowed inside of a P tag even if we could force it.
+    not technically allowed inside a P tag even if we could force it.
   </section>
 
   <section>
