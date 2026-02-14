@@ -152,7 +152,6 @@ const { title } = Astro.props;
     margin-block: 0.2lh;
   }
 
-  /* h2 + p, h2 + ol, h2 + li, h2 + pre, p + p { */
   :where(h2, h3, p) + :where(p, ol, li, pre) {
     margin-top: 0;
   }
@@ -217,5 +216,6 @@ const { title } = Astro.props;
 
   .full-width {
     grid-column: var(--column-full);
+    max-width: 100%;
   }
 </style>
