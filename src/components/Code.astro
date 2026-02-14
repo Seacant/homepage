@@ -6,17 +6,20 @@ type Props = Parameters<typeof AstroCode>[0];
 const { class: className, ...props } = Astro.props;
 ---
 
-<AstroCode
-  {...props}
-  class={className}
-  themes={{
-    light: "github-light",
-    dark: "github-dark",
-  }}
-/>
+<div class="full-width">
+  <AstroCode
+    {...props}
+    class={className}
+    themes={{
+      light: "github-light",
+      dark: "github-dark",
+    }}
+  />
+</div>
 <style is:global>
   .astro-code {
     margin: auto;
+    width: fit-content;
 
     padding: 2ch;
   }
