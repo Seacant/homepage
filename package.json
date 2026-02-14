@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "workspaces": [
     "lib/*"
   ],
@@ -16,14 +16,14 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "astro": "^5.12.9",
+    "astro": "6.0.0-beta.11",
     "common-tags": "^1.8.2",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "0.9.7-beta.1",
     "@types/common-tags": "^1.8.4",
-    "typescript": "^5.9.2"
+    "typescript": "6.0.0-beta"
   },
   "packageManager": "yarn@4.9.2"
 }
