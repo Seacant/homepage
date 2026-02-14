@@ -1,15 +1,14 @@
 ---
-import { Image } from "astro:assets";
-
 import profilePic from "@public/me.png";
 
 import LocalDate from "./LocalDate.astro";
+import Avatar from "./Avatar.astro";
 
 const { date } = Astro.props;
 ---
 
 <div>
-  <Image src={profilePic} height="32" width="32" alt="Picture of the author" />
+  <Avatar src={profilePic} height="32" width="32" alt="Picture of the author" />
   <address>By Travis Fletcher</address>
   on <LocalDate date={date} />
 </div>
