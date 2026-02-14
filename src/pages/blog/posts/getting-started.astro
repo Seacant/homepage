@@ -4,6 +4,8 @@ import Layout from "@layouts/Layout.astro";
 import LocalDate from "@components/LocalDate.astro";
 import ArticleInfo from "@components/ArticleInfo.astro";
 import Code from "@components/Code.astro";
+// for the in-progress components
+import { Code as AstroCode } from "astro:components";
 
 import { html, stripIndent } from "common-tags";
 
@@ -15,17 +17,6 @@ export const description = `
 `;
 export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 ---
-
-<style>
-  /*
-    the examples I gave from before the full-width technique
-    were causing the grid to break due to a leaking width:fit-content
-    from the astro-code code styles
-  */
-  .fix-non-full-width-layout-break {
-    width: 100%;
-  }
-</style>
 
 <Layout title="Learning to <code />">
   <h1>Learning to &lt;code/&gt;</h1>
@@ -107,8 +98,7 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <p>
     Where <code>html`...`</code> is a similarly tagged template which helps us automatically
-    encode our alligators into their html-escaped equivalent. Looking alright so
-    far...
+    encode our alligators into their html-escaped equivalent. Looking alright so far...
   </p>
 
   <h2>Syntax Highlighting</h2>
@@ -127,9 +117,13 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
     highlighting if the client has JS enabled.
   </p>
 
-  <Code
+  <AstroCode
     lang="js"
-    class="fix-non-full-width-layout-break"
+    themes={{
+      light: "github-light",
+      dark: "github-dark",
+    }}
+    style="width: 100%"
     code={stripIndent`
     if ( window.navigator ) {
       console.log("Hello, user!")
@@ -141,9 +135,13 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <p>Not bad! In JSX, the above looks like</p>
 
-  <Code
+  <AstroCode
     lang="js"
-    class="fix-non-full-width-layout-break"
+    themes={{
+      light: "github-light",
+      dark: "github-dark",
+    }}
+    style="width: 100%"
     code={stripIndent`
     /* Contains our 2 styles behind a @media prefers-color-scheme selector *\/
     import '../highlight.css'
@@ -176,7 +174,6 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <Code
     lang="js"
-    class="full-width"
     code={stripIndent`
     import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 
@@ -196,7 +193,6 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <Code
     lang="js"
-    class="full-width"
     code={stripIndent`
   if(you_use_really_long_variable_names_and_hate_newlines_because_youre_a_l33t_hacker_man){console.log("what a cool guy")}
   `}
@@ -210,7 +206,6 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
 
   <Code
     lang="css"
-    class="full-width"
     code={stripIndent`
     /* styles.css */
     main {
@@ -265,9 +260,9 @@ export const date = new Date(Date.UTC(2022, 9, 31, 20, 54, 54));
       with the tricky bit being that we want to declare our layout at the{" "}
       <code>main</code> tag but our semantic HTML-ness means we are surrounded by
       an <code>article</code> before we get to the actual content. By declaring the
-      <code>article</code> as a <code>subgrid</code> spanning the whole workable
-      area, we are able to inherit the layout from main while still allowing our
-      own content to expand into the soft gutter.
+      <code>article</code> as a <code>subgrid</code> spanning the whole workable area,
+      we are able to inherit the layout from main while still allowing our own content
+      to expand into the soft gutter.
     </p>
   </Code>
 </Layout>

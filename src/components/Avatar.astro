@@ -1,0 +1,18 @@
+---
+import type { ComponentProps } from "astro/types";
+import { Image } from "astro:assets";
+
+type Props = ComponentProps<typeof Image>;
+
+const props = Astro.props;
+---
+
+<Image height="128" width="128" {...props} />
+
+<style>
+  img {
+    float: right;
+    border-radius: 64px;
+    shape-outside: circle(50%);
+  }
+</style>
