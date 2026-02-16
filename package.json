@@ -11,7 +11,7 @@
     "clean": "rm -rf dist",
     "clean:deep": "yarn clean && rm -rf node_modules",
     "check": "astro check",
-    "dev": "astro dev",
+    "dev": "astro dev --host 0.0.0.0",
     "preview": "astro preview",
     "start": "astro dev"
   },

@@ -1,11 +1,11 @@
+---
+// Usage Note: Details content breaks out of the grid layout, so it will
+// be automatically 'full-width' / margin: auto to compensate.
+---
 <details class="inline">
   <slot />
 </details>
 
-<!--
-  I needed to make these styles global in order to target underneath.
-  Since we are still nesting _under_ details.inline, this should not leak
--->
 <style is:global>
   details.inline {
     display: inline-block;
@@ -32,14 +32,16 @@
       & > :not(summary) {
         position: absolute;
         left: 0;
-        width: 100%;
+        width: calc(100% - 2ch);
+        margin-inline: 1ch;
       }
     }
     @supports selector(::details-content) {
       &::details-content {
         position: absolute;
         left: 0;
-        width: 100%;
+        width: calc(100% - 2ch);
+        margin-inline: 1ch;
       }
     }
   }
