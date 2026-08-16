@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "rootDir": "./src",
+  "outDir": "./dist",
+   "include": [
+      "${configDir}/.astro/types.d.ts",
+      "${configDir}/**/*"
+   ],
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@public/*": ["./public/*"]
+    },
+    "noEmit": true,
+  }
+}

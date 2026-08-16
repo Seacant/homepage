@@ -7,6 +7,8 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  // TODO: fix whitespace to embrace the new default
+  compressHTML: true,
   scopedStyleStrategy: "where",
   server: {
     allowedHosts: ["sudowoodo"],

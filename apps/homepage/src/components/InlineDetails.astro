@@ -71,6 +71,7 @@
     .forEach((el) => {
       el.addEventListener("toggle", () => {
         const divEl = el.children[1];
+        if(!divEl) return;
 
         el.style.paddingBlockEnd = "0px";
 
