@@ -1,0 +1,19 @@
+
+{
+  "name": "@repo/import-test",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    "./constants.js": "./dist/constants.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

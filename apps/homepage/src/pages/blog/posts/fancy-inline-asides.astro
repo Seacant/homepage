@@ -12,7 +12,7 @@ export const description = `
   Extending the browser-native <details /> element to look good embedded
   in the middle of paragraphs
 `;
-export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
+export const date: Date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
 ---
 
 <Layout title="Inline Asides">
@@ -136,8 +136,8 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
     </div>
 
     isn't just for attaching objects to screen space. It removes the element
-    from ther document flow, allowing us to make space for it ourselves. By <InlineDetails
-    >
+    from ther document flow, allowing us to make space for it ourselves. By
+    <InlineDetails>
       <summary>using JS to set a margin-bottom</summary>
       <div>
         <Code
@@ -243,16 +243,23 @@ export const date = new Date(Date.UTC(2025, 4, 9, 20, 54, 54));
 
 <style>
   details.unstyled-0 {
-    display: inline;
+    display: inline-block;
+    padding-inline: 1ch;
   }
 
   details.unstyled-1 {
-    display: inline;
+    display: inline-block;
     baseline-source: first;
+    padding-inline: 1ch;
+
+    &::details-content {
+      contain: inline-size;
+    }
   }
 
   details.unstyled-2 {
-    display: inline;
+    display: inline-block;
+    padding-inline: 1ch;
     baseline-source: first;
 
     & > summary {

@@ -1,12 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "paths": {
-      "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@public/*": ["./public/*"]
-    },
-    "verbatimModuleSyntax": true,
-    "erasableSyntaxOnly": true
-  }
+  "files": [],
+  "references": [{"path": "packages/test"}]
 }

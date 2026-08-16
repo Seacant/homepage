@@ -1,29 +1,15 @@
+
 {
   "private": true,
   "type": "module",
-  "version": "2.0.1",
+  "version": "1.0.0",
   "workspaces": [
-    "lib/*"
+    "apps/*",
+    "packages/*"
   ],
-  "scripts": {
-    "astro": "astro",
-    "build": "astro check && astro build",
-    "clean": "rm -rf dist",
-    "clean:deep": "yarn clean && rm -rf node_modules",
-    "check": "astro check",
-    "dev": "astro dev --host 0.0.0.0",
-    "preview": "astro preview",
-    "start": "astro dev"
-  },
-  "dependencies": {
-    "astro": "6.0.0-beta.11",
-    "common-tags": "^1.8.2",
-    "sharp": "^0.34.3"
-  },
   "devDependencies": {
-    "@astrojs/check": "0.9.7-beta.1",
-    "@types/common-tags": "^1.8.4",
-    "typescript": "6.0.0-beta"
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "pnpm@v12.0.0-rc.6"
 }
